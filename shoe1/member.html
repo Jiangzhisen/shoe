@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員中心</title>
+    <link rel="stylesheet" type="text/css" href="./asset/css/mamber.css" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/1.css" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/login.css" />
+    <link rel="stylesheet" type="text/css" href="./asset/js/sign.js" />
+</head> 
+<body>
+    <header>
+
+        <div class="top">
+            <div class="ss22">
+                <div class="s2ch">
+                <img class="s2ch2" src="./asset/image/2ch.png">
+            </div>
+            
+                <form class="s22">
+                    <input class="s222" type="text" name="s2ch" placeholder="搜一下" >
+                </form>
+            </div>
+            <a href="index.html"><div class="solw">靴を買う</div></a>
+            <div class="man1">
+                <img class="log1" src="./asset/image/man2.png">
+            </div>
+            <form class="out">
+                <input  type=image class="out_input" name=sa src="asset/image/logout.png" >
+            </form>
+            <div class="man">
+                <button class="login_show" onclick="show()" style="cursor: pointer;" ><img class="log"src="./asset/image/man.png"></button>
+            </div>
+            <div class="car">
+                <a href="shoppingcar.html"><img class="log"src="./asset/image/c1.png"></a>
+            </div>
+            
+        </div>
+    </header>
+    <nav>
+        <div class="menu">
+            <ul>
+                
+                <li class="menu1">
+                    <div class="dropdown">
+                        <button class="dropbtn">常見問題</button>
+                        <div class="dropdown-content">
+                            <a href="">Q&A</a>
+                            <a href="">如何挑選</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu1"> 
+                    <a href="member.html" style="text-decoration: none" class="menubtn">關於我們</a>
+                </li>
+
+                <li class="menu1">
+                    <div class="dropdown">
+                        <a href="model.html"><button class="dropbtn" >商品分類</button></a>
+                        <div class="dropdown-content">
+                            <a href="model.html#skater">板鞋<br></a>
+                            <a href="model.html#sneaker">運動鞋</a>
+                            <a href="model.html#boots">靴子<br></a>
+                            <a href="model.html#casual">休閒鞋<br></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu1">
+                    <a href="momber_form.html" style="text-decoration: none;" class="menubtn">回饋表單</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <!--     以上為HEADER        -->
+
+<div  id="login_box1" class="login_box">
+    <div   class="login_box1">
+
+    </div>
+    <div   class="login_box2">
+    <div class="QAZ" >
+        <div class="lp">
+            <div id="cont1">
+    
+                <div class="login">
+    
+                    <h1>登入</h1>
+    
+                    <form method="Get" action="check.jsp">
+                        <input type="text" id="uname" placeholder="帳號" required name="uname" ">
+                        <div class="tab"></div>
+                        <input type="password" id="pass" placeholder="密碼" required name="pass">
+                        <div class="tab"></div>
+                        <input type="submit" value="登入" class="submit" onclick="location.href='#'" style="cursor: pointer;">
+                    </form>
+    
+                    <h3 onclick="show2()" style="cursor: pointer;">註冊帳號</h3>
+                    <h3 onclick="hide()()" style="cursor: pointer;">取消</h3>
+    
+                </div>
+            </div>
+        </div>
+        
+    
+        <div class="sp">
+            <div id="cont2">
+    
+                <div class="signup">
+    
+                    <h1>註冊</h1>
+    
+                    <form method="GET" action="sign_up.jsp">
+                        
+                        <input type="text" id="uname2" placeholder="帳號" required name="uname"name="name2">
+                        <div class="tab"></div>
+                        <input type="password" id="pass2" placeholder="密碼" required name="pass"name="name3">
+                        <div class="tab"></div>
+                        <input type="text" id="cpass" placeholder=" 確認密碼" required name="cpass" name="name4">
+                        <div class=" tab">
+                        </div>
+                        <input type="submit" value="註冊" class="submit" style="cursor: pointer;">
+                    </form>
+    
+                    <h3 onclick="show2()" style="cursor: pointer;">登入帳號</h3>
+                    <h3 onclick="hide()()" style="cursor: pointer;">取消</h3>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    </div>
+    
+</div>
+<!--     以上為登入畫面        -->
+    <div class="member_box" >
+        <div class="member_top_box">
+        <div class="member_top">
+
+            <img src="./asset/image/animal3.jpg" class="member_photo">
+            <p class="member_name" >陳森永</p>
+            
+            <form class="member_btn1" action="shopHistry.html">
+                <input type="submit" value="消費歷史" class="member_edit_btn"  style="cursor: pointer;">
+          </form>
+          <form class="member_btn2" action="member_edit.html">
+            <input type="submit" value="修改資料" class="member_edit_btn" style="cursor: pointer;"  >
+      </form>
+           
+        </div>
+    </div>
+    <div class="member_info_box" >
+        <P class="member_info" >帳號:beson878787</P>
+    </div>
+    <div class="member_info_box" >
+        <P class="member_info" >性別:男</P>
+    </div>
+    <div class="member_info_box" >
+        <P class="member_info" >電話:0987878787</P>
+    </div>
+    <div class="member_info_box" >
+        <P class="member_info" >EMail:beson878787@gmail.com</P>
+    </div>
+    <div class="member_info_box" >
+        <P class="member_info" >地址:桃園市中壢區中北路200號</P>
+    </div>
+    </div>
+    <footer>
+        <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
+            沒有版權 愛怎麼抄就怎麼抄
+        </p>
+    </footer>
+    <script src="./asset/js/sign.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+section{
+    font-family: "秀風體W3";
+}
+
+.carbox{
+    background-image: url(../image/b4.jpg);
+    height: 100%; /*預設*/
+    width: 80%;
+    margin-right: 10%;
+    margin-top: 1%;
+    margin-left: 10%;
+    border-radius: 10px;
+    display:inline-block;
+
+}
+.carbox1{
+    background-color: antiquewhite;
+    font-size: 35px;
+    border-radius: 25px;
+    margin: 2% 2% 2% 5%;
+    width: 360px;
+    display: inline-block;
+}
+.tit2{
+    margin-top: 2%;
+    text-align: center;    
+    font-size: 50px;
+    font-weight: bolder;
+}
+.shoepic{
+    margin-left: 3%;
+    margin-top: 5%;
+    padding: 25px;
+    width: 280px;
+    background-image: url(../image/b2.jpg);
+    border-radius: 20px;
+}
+.pic{
+    width: 280px;
+    border-radius: 10px;
+}
+.detail{
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 10%;
+    font-size: 30px;
+}
+.cont{
+    text-align: center;
+}
+.dele{
+    width: 150px;
+    border: none;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
+    font-weight: bolder;
+    font-size: 30px;
+    background-color: #d9b981;
+    transition: ease-in 0.5s;
+}
+.send{
+    background-image: url(../image/b4.jpg);
+    width: 200px;
+    margin-top: 1%;
+    right: 50%;
+    border-radius: 20px;
+    margin-left:45%;
+}
+.senta {
+    padding: 1.5% 3%;
+    margin-top: 6%;
+    margin-left: 7%;
+    margin-bottom: 6%;
+    font-size: 40px;
+    font-weight: bolder;
+    cursor: pointer;
+    text-align: center; 
+    outline: none;
+    color: #EFF6EE;
+    background-color: #C46D5E;
+    border: none;
+    border-radius: 15px;
+    transition: ease-in 0.5s;
+}
+
+.dele:hover{
+    background-color: #fff;
+    color: black;
+    border: solid 1px black;
+    font-weight: bolder;
+    box-shadow: 0 2px #d9b981;
+    transition-duration: 0.5s;
+}
+.senta:hover{
+    background-color: #fff;
+    color: black;
+    border: solid 1px black;
+    font-weight: bolder;
+    transition-duration: 0.5s;
+}
+.shopp:hover{
+    transition-duration: 0.5s;
+    border-radius: 20px;
+}
+.carbox1:hover{
+    background-image: url(../image/p2.jpg);
+}

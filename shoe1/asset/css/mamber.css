@@ -1,0 +1,144 @@
+.member_box{
+    width: 60%;
+    border-style: solid;
+    border-width: 7px;
+    border-color: gray;
+    border-radius: 20px;
+    margin-left: 20%;
+    margin-top: 40px;
+    height: auto;
+    background-image: url(../image/b4.jpg);
+}
+.member_top_box{
+    width: auto;
+    height: 540px;
+    background-image: url(../image/b4.jpg);
+   border-radius: 20px;
+}
+.member_top{
+    background-image: url(../image/m1.jpg);
+    background-size: cover;
+    position: absolute  ;
+    width: 60%;
+    height: 350px;
+    
+    border-radius: 20px;
+    right: 20%;
+}
+.member_photo{
+    margin-top: 200px;
+    width: 300px;
+    height: 300px;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 300px;
+    float: left;
+}
+.member_name{
+    margin-top : 400px;
+    margin-left:30%;
+    font-size: 70px;
+}
+.member_btn2{
+    
+    position: relative;
+    margin: 10px;
+    transform: translate(250px,-120px);
+}
+.member_btn1{
+    transform: translateX(-300px);
+    position: relative;
+    margin: 10px;
+}
+.member_edit_btn{
+    position: relative;
+    left: 60%;
+    color: white;
+    background: #d4a745;
+    width: 200px;
+    height: 90px;
+    margin: 10px;
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 20px;
+    border: 0px;
+    opacity: 0.8;
+    transform: translateY(-100px);
+}
+.member_edit_btn:hover {
+    background: #a18b5c;
+}
+.member_info_box{
+    position:relative ;
+    top:10px;
+    right: 0%;
+    border-radius: 20px;
+    width: 80%;
+    height: 140px;
+    background-color: antiquewhite;
+    opacity: 0.5;
+    background-size: cover;
+    margin:50px 50px 50px 1px;
+    transform: translateX(15%);
+}
+.member_info{
+    width: auto;
+    padding: 50px;
+    font-size:40px;
+}
+.member_edit_conf{
+    position: relative;
+    left: 35%;
+    color: white;
+    background: #d4a745;
+    width: 180px;
+    height: 70px;
+    margin: 10px;
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 20px;
+    border: 0px;
+    opacity: 0.8;
+    
+    
+}
+.member_edit_conf:hover {
+    background: #a18b5c;
+}
+.member_info_edit{
+    position: relative;
+    margin-left: 10px;
+    height: 55px;
+    font-size:30px;
+    top: 40px;
+    left: 0px;
+
+}.member_info2{
+    position:relative ;
+    margin-top: 40px;
+    margin-left: 10px;
+    width: auto;
+    padding: 50px;
+    font-size:40px;
+    top:45px;
+    transform: translateY(40px);
+}
+.member_info_edit_r{
+    position: relative;
+    margin-left: 10px;
+    height: 70px;
+    
+    font-size:40px;
+    top: 50px;
+    left: 0px;
+    size: 10px;
+}
+.textarea1{
+    position: relative;
+    margin-left: 10px;
+    width: 600px;
+    height: 110px;
+    font-size:40px;
+    top: 60px;
+    left: 0px;
+}

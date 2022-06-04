@@ -1,0 +1,395 @@
+@font-face {
+    font-family: "秀風體W3";
+    src: url(../font/秀風體W3.ttc);
+  }
+body{
+    background-image: url(../image/1.jpg);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "秀風體W3";
+    scroll-behavior: smooth;
+}
+header{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+.top{
+    text-align: center;
+    color:black;
+    position: relative;
+    font-size: 100px;
+}
+header .solw{
+    display:inline-flex;
+    color:black;
+}
+.solw:hover{
+    color:rgba(165, 98, 98, 0.884);
+    font-weight: bolder;
+    transform: scale(1.15);
+    transition-duration: 1s;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+.car{
+    position: absolute;
+    left: 89%;
+    top: 11%;
+}
+.car:hover{
+    transform: scale(1.1);
+    transition-duration: 1s;
+}
+.man{
+    position: absolute;
+    left: 95%;
+    top: 10%;
+}
+.man:hover{
+    transform: scale(1.05);
+    transition-duration: 0.7s;
+}
+.log{
+    width: 80px;
+}
+.out{
+    position: absolute;
+    margin-right: 0%;
+    right: 270px;
+    width: 90px;
+    top: 3%;
+    border: 0px;
+}
+.out_input{
+    width: 90px;
+    border: 0px;
+    margin-left: 28%;
+}
+.out:hover{
+    transform: scale(1.1);
+    transition-duration: 0.7s;
+}
+.man1{
+    position: absolute;
+    left: 94.7%;
+    top: 4%;
+}
+
+.log1{
+    width: 90px;
+}
+.s2ch{
+    position: absolute;
+    left: 2%;
+    top: 10%;
+}
+.s2ch2{
+    position: relative;
+    width: 80px;
+    z-index: 98;
+    background-image: url(../image/1.jpg);
+}
+.s22{
+     display: inline;
+    position: absolute;
+    left: 2%;
+    top:10%;
+    background-image: url(../image/1.jpg);
+}
+.s222{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 2px;
+    border-radius: 60px;
+    opacity: 0;
+    z-index: 99;
+    border-color: black;
+    border-width: 3px;
+    cursor: pointer;
+    top: 0px;
+    background-color: transparent;
+    transition: ease-in 0.5s;
+    padding-left: 90px;
+    outline: 0;
+}
+.ss22{
+    display: inline;
+    width: 100px;
+    height: 100px;
+}
+.s222:focus{
+ transition: 0s;
+  z-index: 0;
+}
+.s222:focus{
+    top: 25px;
+    height: 20px;
+    width: 200px;
+    opacity: 1;
+    transition: 0.5s;
+}
+.s222:focus.s2ch2{
+    opacity:0;
+}
+nav{  
+    margin-top: 1%;
+    margin-left: 20%;
+    background-color: antiquewhite;
+    width: 60%;
+    border-radius: 10px;
+    word-spacing: 5%;
+    text-align: center;
+    font-weight:bolder;
+}
+.menu1 {
+    color: black;
+    font-size: 45px;
+    display: inline-block;
+
+    margin-left: 4%;
+}
+
+.menu1:hover {
+    background-image: url(../image/b4.jpg);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.menubtn {
+    color: black;
+    font-size: 45px;
+    display: inline;
+    list-style-type: none;
+    width: 50% auto;
+}
+
+.menubtn:hover {
+    background-image: url(../image/b4.jpg);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/*-----下拉式菜單-----*/
+.dropbtn {
+    color: black;
+    background-color: antiquewhite;
+    padding: 0px 5px;
+    font-weight: bolder;
+    font-size: 45px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    z-index: 5;
+    border-radius: 5px;
+    border: solid 1px black;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 0px;
+    font-size: 30px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    display: block;
+    width: 100%;
+}
+
+.dropdown-content a:hover {
+    background-image: url(../image/b4.jpg);
+    color: white;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-image: url(../image/b4.jpg);
+    color: white;
+}
+
+
+
+
+a{
+    text-decoration:none;
+    color: black;
+}
+.n1{
+    font-size: 40px;
+    padding-left: 1%;
+}
+.n2{
+    font-size: 40px;
+    padding-left: 6%;
+    width: 10%;
+}.n3{
+    font-size: 40px;
+    padding-left: 6%;
+}
+.n4{
+    font-size: 40px;
+    padding-left: 6%;
+}
+
+.cls{
+    display: inline-block;
+    position:relative;
+    text-align: center;
+    width: 100%;
+}
+.shoe1:hover{
+    background-image: url(../image/p1.jpg);
+    font-weight: bolder;
+    font-size: 35px;
+}
+.shoename{
+    margin-top:5%;
+}
+/* .shosho{
+    background-image: url(../image/b4.jpg);
+    margin-left: 40%;
+    margin-top: 1%;
+    margin-right: 40%;
+    font-size: 50px;
+    border-radius: 10px;
+    font-weight: bolder;
+    color:black
+} */
+.shoe1{
+    display: inline-block;
+    margin-top: 5%;
+    margin-left: 1.5%;
+    padding: 25px;
+    vertical-align: top;
+    text-align: center;
+    height: 400px;
+    line-height: 30px;
+    background-image: url(../image/b2.jpg);
+    border-radius: 20px;
+    font-size: 30px;
+}
+.picture{
+    width: 350px;
+    border-radius: 15px;
+}
+footer{
+    background-color: antiquewhite;
+    margin-top: 5%;   
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    bottom: 0%;
+}
+footer p{
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+
+/* 換字動畫 */
+.grid-central{
+    display: grid;
+    place-items: center;
+
+}
+.vertical-rotate-cell{
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.vertical-rotate-container{
+    position: relative;
+    width: 400px;
+    height: 50px;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg);
+    transition: 0.5s linear;
+}
+.vertical-rotate-cell:hover > .vertical-rotate-container{
+    transform: rotateX(180deg);
+}
+.vertical-rotate-central{
+    width: 400px;
+    height: 50px;
+    background-image: url(../image/b4.jpg);
+    border-radius: 10px;
+}
+.text-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.vertical-rotate-text{
+    color: black;
+    font-weight: bolder;
+    font-size: 50px;
+}
+.vertical-rotate-front, .vertical-rotate-behind{
+    font-size: 50px;
+    cursor: default;
+}
+.vertical-rotate-front{
+    transform: translateZ(20px);
+}
+.vertical-rotate-behind{
+    transform: translateZ(-20px) rotateY(180deg) rotateZ(180deg);
+}
+  
+
+
+.login_box{
+    z-index: 100;
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    top:0px;
+    display: none;
+}
+.login_box1{
+    z-index: 101;
+    position: fixed;
+    background-color: black;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    top:0px;
+    
+}
+.login_box2{
+    z-index:102;
+    position: fixed;
+    
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    top:0px;
+    
+}
+.login_show{
+    background-color: #f9f9f900;
+    border: 0px;
+}

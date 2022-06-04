@@ -1,0 +1,227 @@
+section{
+    display: flex;
+    font-family: "秀風體W3";
+}
+.pic{
+    width: 500px;
+    border-radius: 10px;
+}
+.shoepic{
+    margin-left: 10%;
+    margin-top: 5%;
+    padding: 25px;
+    height: 510px;
+    width: 500px;
+    background-image: url(../image/b2.jpg);
+    border-radius: 20px;
+}
+.detail{   
+    margin-left: 1%;
+    margin-right :10%;
+    margin-top: 5%;
+    padding: 25px;
+    height: 510px;
+    width: 800px;
+    background-image: url(../image/b1.jpg);
+    border-radius: 20px;
+}
+.tit{
+    font-size: 50px;
+    text-align: center;
+}
+.tit:hover{
+    color: gray;
+    cursor: default;
+}
+.detail p{
+    font-size: 30px;
+    padding-left: 5%;
+    letter-spacing: 5px; /*沒用*/
+    line-height: 180%;
+}
+.lab{
+    font-size: 40px;
+    font-weight: bolder;
+}
+.shopp{
+    margin-left: 4%;
+}
+
+input[type=number]{
+    width: 20%;
+    padding: 1% 1%;
+    margin: 0.5%;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 40px;
+    border: black solid 1px;
+}
+.gogo {
+    margin-left: 15%;
+    display: inline-block;
+    padding: 1.5% 3%;
+    margin-top: 4%;
+    font-size: 40px;
+    cursor: pointer;
+    text-align: center; 
+    outline: none;
+    color: #EFF6EE;
+    background-color: #C46D5E;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+.gogo:hover{
+    background-color: #fff;
+    color: black;
+    border: solid 1px black;
+    font-weight: bolder;
+    box-shadow: 0 9px #C46D5E;
+    transition-duration: 1s;
+}
+.but{
+    margin-left: 5%;
+}
+.but li{
+    margin-top: 3%;
+    margin-left: 1%;
+    list-style-type: none;
+    display: inline-block;
+}
+.but button{
+    width: 150px;
+    outline: none; 
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
+    font-size: 25px;
+    background-color: #d9b981;
+}
+.but button:hover{
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
+    font-size: 25px;
+    box-shadow: 0;
+    color: #fff;
+    background-color: black;
+}
+.but button:focus{
+    border: none;
+    border-radius:10px;
+    font-size: 25px;
+    box-shadow: 0;
+    color: #fff;
+    background-color: black;
+}
+.tit2{
+    font-size: 50px;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+.comments{
+    align-items: center;
+    background-image: url(../image/b4.jpg);
+    object-fit: fill;
+    height: 200%; /*預設*/
+    width: 74.5%;
+    margin-top: 2%;
+    margin-left: 10%;
+    border-radius: 10px;
+}
+.comm{
+    display: flex;
+    margin-left: 8%;
+    font-size: 45px;
+    font-weight: bolder;
+    background-color: #d9b981;
+    margin-top: 3%;
+    margin-right: 8%;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+.talk{
+    margin: 2% 8% 5% 8%; 
+    padding-left: 1%;
+    background-color: #d9b981;
+    border-radius: 10px;
+    height: 10%;
+    border: none;
+}
+.haha{
+    width: 80%;
+    padding: 1% 1%;
+    margin: 1%;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 40px;
+}
+.gogo2{
+    width: 150px;
+    outline: none; 
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
+    font-size: 30px;
+    background-color: #C46D5E;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    /*font-weight: bolder;*/
+}
+.gogo2:hover{
+    background-color: #fff;
+    color: black;
+    border: solid 1px black;
+    box-shadow: 0 9px #C46D5E;
+    transition-duration: 1s;
+}
+.stars{
+    margin-top: 0;
+}
+.rating{
+    width: 50%;
+    margin-left: 27%;
+    position: relative;
+    transform: rotateY(180deg);
+    display: flex;
+    padding: 2%;
+    justify-content: flex-end;
+}
+.rating input{
+    display: none;
+    letter-spacing: 2%;
+}
+.rating label{
+    display: block;
+    cursor: pointer;
+}
+.rating label:before{
+    content: '★';
+    position: absolute;
+    display: block;
+    font-size: 50px;
+    color: #EFF6EE;
+    z-index: 1;
+}
+.rating label:after{
+    content: '★';
+    position: relative;
+    display: block;
+    font-size: 50px;
+    color: #153243;
+    opacity: 0;
+    transition: .3s;
+    text-shadow: 0;
+    z-index: 2;
+}
+
+.rating label:hover:after,
+.rating label:hover~label:after,
+.rating input:checked~label:after{
+    opacity: 1;
+}
