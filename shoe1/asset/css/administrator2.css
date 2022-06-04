@@ -1,0 +1,120 @@
+@font-face {
+    font-family: "秀風體W3";
+    src: url(../font/秀風體W3.ttc);
+  }
+body{
+    background-image: url(../image/1.jpg);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "秀風體W3";
+}
+header{
+    width: 100%;
+}
+
+.top{
+    font-family: "秀風體W3";
+    text-align: center;
+    color:black;
+    position: relative;
+    font-size: 100px;
+}
+.car{
+    position: absolute;
+    left: 89%;
+    top: 11%;
+}
+.man{
+    position: absolute;
+    left: 95%;
+    top: 10%;
+}
+.log{
+    width: 80px;
+}
+.man1{
+    position: absolute;
+    left: 94.7%;
+    top: 4%;
+}
+.log1{
+    width: 90px;
+}
+nav{  
+    margin-top: 1%;
+    font-family: "秀風體W3";
+    margin-left: 20%;
+    background-color: antiquewhite;
+    width: 60%;
+    border-radius: 10px;
+    word-spacing: 5%;
+    text-align: center;
+    font-weight:bolder;
+}
+a{
+    text-decoration:none;
+    color: black;
+}
+.n1{
+    font-size: 40px;
+    padding-left: 1%;
+}
+.n2{
+    font-size: 40px;
+    padding-left: 6%;
+    width: 10%;
+}.n3{
+    font-size: 40px;
+    padding-left: 6%;
+}
+.n4{
+    font-size: 40px;
+    padding-left: 6%;
+}
+.cls{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+.shosho{
+    background-image: url(../image/b4.jpg);
+    margin-left: 40%;
+    margin-top: 1%;
+    margin-right: 40%;
+    font-size: 50px;
+    border-radius: 10px;
+    font-weight: bolder;
+    color:black
+}
+.shoe1{
+    display: inline-block;
+    margin-left: 1.5%;
+    margin-top: 1%;
+    padding: 25px;
+    vertical-align: top;
+    text-align: center;
+    height: 400px;
+    line-height: 30px;
+    background-image: url(../image/b2.jpg);
+    border-radius: 20px;
+    font-size: 30px;
+}
+.picture{
+    width: 350px;
+    border-radius: 15px;
+}
+footer{
+    background-color: antiquewhite;
+    margin-top: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    bottom: 0;
+  }
+footer p{
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}

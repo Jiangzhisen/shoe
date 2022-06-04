@@ -1,0 +1,267 @@
+@font-face {
+    font-family: "秀風體W3";
+    src: url(../font/秀風體W3.ttc);
+  }
+body{
+    background-image: url(../image/1.jpg);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    width: 100%;
+}
+.top{
+    font-family: "秀風體W3";
+    text-align: center;
+    color:black;
+    position: relative;
+    font-size: 100px;
+}
+.man{
+    position: absolute;
+    left: 95%;
+    top: 10%;
+}
+.log{
+    width: 80px;
+}
+nav{  
+    margin-top: 1%;
+    font-family: "秀風體W3";
+    margin-left: 20%;
+    background-color: antiquewhite;
+    width: 60%;
+    border-radius: 10px;
+    word-spacing: 5%;
+    text-align: center;
+    font-weight:bolder;
+}
+a{
+    text-decoration:none;
+    color: black;
+}
+.n1{
+    font-size: 40px;
+    padding-left: 1%;
+}
+.n2{
+    font-size: 40px;
+    padding-left: 6%;
+    width: 10%;
+}.n3{
+    font-size: 40px;
+    padding-left: 6%;
+}
+.n4{
+    font-size: 40px;
+    padding-left: 6%;
+}
+section{
+    
+}
+.shoe1{
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 5%;
+    padding: 25px;
+    vertical-align: top;
+    text-align: center;
+    height: 400px;
+    line-height: 30px;
+    background-image: url(../image/b2.jpg);
+    border-radius: 20px;
+}
+.picture{
+    width: 350px;
+    border-radius: 15px;
+}
+#banner001{
+    margin-left: 5%;
+    margin-top:10px;
+    width: 90%;
+}
+.chose{
+    margin-left: 10%  ;
+    margin-top: 5%;
+    width: 80%;
+    columns:2 ;
+}
+.chose_left{ display: inline-block;
+    margin-left: 3%;
+    margin-top: 5%;
+    padding: 25px;
+    vertical-align: top;
+    text-align: center;
+    height: 400px;
+    line-height: 30px;
+    background-image: url(/asset/image/b2.jpg);
+    border-radius: 20px;
+}
+.chose_right{
+    display: inline-block;
+    margin-right: 3%;
+    margin-top: 5%;
+    padding: 25px;
+    vertical-align: top;
+    text-align: center;
+    height: 400px;
+    line-height: 30px;
+    background-image: url(/asset/image/b2.jpg);
+    border-radius: 20px;
+}
+.top_title{
+    margin-top: 4%;
+    text-align: center;
+    font-family: "秀風體W3";
+    text-align: center;
+    color:black;
+    position: relative;
+    font-size: 70px;
+}
+
+
+
+
+* {
+    font-family: 微軟正黑體;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(206, 195, 195);
+}
+
+.LO {
+    margin: auto;
+    position: relative;
+    text-align: center;
+    top: 80px;
+}
+
+.LP h5 {
+    margin: 17px;
+    color: #000000;
+}
+
+.SP h5 {
+
+    margin: 17px;
+    color: #000000;
+
+}
+
+.LP h5:hover {
+    color: rgb(226, 163, 163);
+}
+.SP h5:hover {
+    color: rgb(226, 163, 163);
+}
+
+.LP h3,
+#uname,
+#pass,
+#name,
+#cpass,
+#uname2,
+#pass2 {
+    width: 400px;
+    height: 20px;
+    margin: 10px;
+    color: #000000;
+}
+.SP h3,
+.uname,
+.pass,
+#name,
+#cpass,
+#uname2,
+#pass2 {
+    
+    width: 250px;
+    height: 20px;
+    margin: 18px;
+    padding: 5px;
+    color: #000000;
+    font-size: 25px;
+}
+
+.cont1{
+    margin: 80px;
+    padding: 12px;
+    width: 60%;
+    height: 850px;
+    background-color: white;
+    border-radius: 15px;
+    border-top: 10px solid #c3b4b0;
+    position: relative;
+    margin: auto;
+    top: 100px;
+    text-align: center;
+    font-size: 35px;
+}
+.cont2{
+    margin: 80px;
+    padding: 12px;
+    width: 60%;
+    height: 300px;
+    background-color: white;
+    border-radius: 15px;
+    border-top: 10px solid #c3b4b0;
+    position: relative;
+    margin: auto;
+    top: 100px;
+    text-align: center;
+    font-size: 35px;
+}
+#cont2 {
+    margin: 65px;
+    padding: 12px;
+    width: 400px;
+    height: 350px;
+    background-color: white;
+    border-radius: 15px;
+    border-top: 10px solid #c3b4b0;
+    position: relative;
+    margin: auto;
+    top: 100px;
+    text-align: center;
+}
+
+#cont2 {
+    visibility: hidden;
+    height:350px;
+}
+
+
+
+.submit {
+    color: white;
+    background: #d4a745;
+    width: 200px;
+    height: 35px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 15px;
+    border: 0px;
+    opacity: 0.8;
+    font-size: 20px;
+}
+
+.submit:hover {
+    background: #a18b5c;
+}
+
+
+
+input {
+    padding: 5px;
+    border: none;
+    border: solid 2px #d4a745;
+    border-radius: 5px;
+}
+.QAZ{
+    height: 2300px;
+}
