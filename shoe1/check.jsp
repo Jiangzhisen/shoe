@@ -12,9 +12,16 @@ if(request.getParameter("acct1") !=null && !request.getParameter("acct1").equals
     ResultSet paperrs = pstmt.executeQuery();
 
     if(paperrs.next()){
-        session.setAttribute("acct",request.getParameter("acct1"));
-        con.close();
-        response.sendRedirect("member.jsp");
+        if(request.getParameter("acct1").equals("admin")){
+            session.setAttribute("acct",request.getParameter("acct1"));
+            con.close();
+            response.sendRedirect("administrator.jsp");
+        }
+        else{
+            session.setAttribute("acct",request.getParameter("acct1"));
+            con.close();
+            response.sendRedirect("member.jsp");
+        }
     }
     else{
         con.close();

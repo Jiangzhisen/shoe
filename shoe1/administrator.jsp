@@ -7,16 +7,18 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>修改資料</title>
-    <link rel="stylesheet" type="text/css" href="./asset/css/index_css.css" />
-    <link rel="stylesheet" type="text/css" href="./asset/css/mamber.css" />
+    <title>管理畫面</title>
+
+    <link rel="stylesheet" type="text/css" href="./asset/css/administrator1.css" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/administrator2.css" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/3.css" />
     <link rel="stylesheet" type="text/css" href="./asset/css/1.css" />
-    <link rel="stylesheet" type="text/css" href="./asset/css/login.css" />
-    <link rel="stylesheet" type="text/css" href="./asset/js/sign.js" />
+
 </head>
 <body>
-    <header>
+<header>
 
         <div class="top">
             <div class="ss22">
@@ -140,7 +142,6 @@
             out.println("</nav> ");
         }
     %>
-
     <!--     以上為HEADER        -->
 
 <div  id="login_box1" class="login_box">
@@ -203,46 +204,113 @@
     
 </div>
 <!--     以上為登入畫面        -->
-    <form action="addMember.jsp">
-    <div class="member_box" >
-        <div class="member_info_box" >
-            <label class="member_info2" >暱稱:</label>
-            <input type="text" class="member_info_edit" size="20" value="暱稱" name="nickname">
-        </div>
-        <div class="member_info_box" >
-            <label class="member_info2" >性別:</label>
-            <input style="height:35px; width:35px;" type="radio" class="member_info_edit_r" name="member_info_edit_r"  value="男" ><label class="member_info2" >男</label>
-            <input style="height:35px; width:35px;" type="radio" class="member_info_edit_r"  name="member_info_edit_r" value="女" ><label class="member_info2" >女</label>
-        </div>
-
-        <div class="member_info_box" >
-            <label class="member_info2" >你是一隻?</label>
-            <input style="height:35px; width:35px;" type="radio" class="member_info_edit_r" name="member_animal"  value="animal1" ><label class="member_info2" >猩猩</label>
-            <input style="height:35px; width:35px;" type="radio" class="member_info_edit_r" name="member_animal"  value="animal2" ><label class="member_info2" >山羊</label>
-            <input style="height:35px; width:35px;" type="radio" class="member_info_edit_r" name="member_animal"  value="animal3" ><label class="member_info2" >馬</label>
-        </div>
-        <div class="member_info_box" >
-            <label class="member_info2" >郵箱:</label>
-            <input type="email" class="member_info_edit" size="20" value="EMail" name="mail">
-        </div>
-        <div class="member_info_box" >
-            <label class="member_info2" >電話:</label>
-            <input type="tel" class="member_info_edit" size="20" value="09" name="phone">
-        </div>
-        <div class="member_info_box" >
-            <label class="member_info2" >地址:</label>
-            <input type="text" name="addr" class="member_info_edit" size="40" value="無" >
-        </div>
+    
+        <div class="QAZ" style="height:2500px; ">
+            <div class="lp">
+                <div class="cont1">
         
-        <input type="reset" value="清除輸入" class="member_edit_conf"  style="cursor: pointer;">
-        <input type="submit" value="確認送出" class="member_edit_conf"  style="cursor: pointer;">
-    </div>
-</form>
-<footer>
-    <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
-        沒有版權 愛怎麼抄就怎麼抄
-    </p>
-</footer>
-<script src="./asset/js/sign.js"></script>
+                    <div class="login">
+        
+                        <h1>新增商品</h1>
+                        <br><br>
+                        <form method="post" action="addProduct.jsp">
+                            請輸入商品名稱  <input type="text" class="uname" required name="pname">
+                            <div class="tab"></div>
+                            請輸入商品顏色   <input type="text" class="pass" required name="color">
+                            <div class="tab"></div>
+                            請選擇商品類別   &nbsp;<select size="1" class="pass6" name="category" style="font-size:25px; width: 250px; margin: 18px; padding: 5px;">
+                                <option>板鞋</option>
+                                <option>運動鞋</option>
+                                <option>靴子</option>
+                                <option>休閒鞋</option>
+                            </select>
+                            <div class="tab"></div>
+                            請輸入商品尺寸   <input type="text" class="pass" required name="size">
+                            <div class="tab"></div>
+                            請輸入商品介紹   <input type="text" class="pass" required name="intro">
+                            <div class="tab"></div>
+                            請輸入商品價格   <input type="text" class="pass" required name="price">
+                            <div class="tab"></div>
+                            請輸入商品庫存   <input type="text" class="pass" required name="quantity">
+                            <div class="tab"></div>
+                            請輸入圖片路徑   <input type="text" class="pass" required name="picture">
+                            <div class="tab"></div>
+                            <br>
+                            <input type="submit" value="送出" class="submit" style="cursor: pointer;">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="cont1">
+        
+                    <div class="login">
+        
+                        <h1>修改商品</h1>
+                        <br><br>
+                        <form method="get" action="modify_Product.jsp">
+                            請輸入商品名稱  <input type="text" class="uname" required name="pname">
+                            <div class="tab"></div>
+                            請輸入商品顏色   <input type="text" class="pass" required name="color">
+                            <div class="tab"></div>
+                            請選擇商品類別   &nbsp;<select size="1" class="pass6" name="category" style="font-size:25px; width: 250px; margin: 18px; padding: 5px;">
+                                <option>板鞋</option>
+                                <option>運動鞋</option>
+                                <option>靴子</option>
+                                <option>休閒鞋</option>
+                            </select>
+                            <div class="tab"></div>
+                            請輸入商品尺寸   <input type="text" class="pass" required name="size">
+                            <div class="tab"></div>
+                            請輸入商品介紹   <input type="text" class="pass" required name="intro">
+                            <div class="tab"></div>
+                            請輸入商品價格   <input type="text" class="pass" required name="price">
+                            <div class="tab"></div>
+                            請輸入商品庫存   <input type="text" class="pass" required name="quantity">
+                            <div class="tab"></div>
+                            請輸入圖片路徑   <input type="text" class="pass" required name="picture">
+                            <div class="tab"></div>
+                            <br>
+                            <input type="submit" value="送出" class="submit" style="cursor: pointer;">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="cont2">
+        
+                    <div class="login">
+        
+                        <h1>刪除商品</h1>
+                        <br><br>
+                        <form method="post" action="delproduct.jsp">
+                            請輸入商品名稱  <input type="text" class="uname" required name="pname">
+                            <div class="tab"></div>
+                            <br>
+                            <input type="submit" value="送出" class="submit" style="cursor: pointer;">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="cont2">
+        
+                    <div class="login">
+        
+                        <h1>訂單紀錄</h1>
+                        <br><br>
+                        <form method="get" action="">
+                            <div class="tab"></div>
+                            <br>
+                            <input type="submit" value="查詢" class="submit" style="cursor: pointer;">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <script src="./asset/js/sign.js"></script>
+        <footer>
+            <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
+                沒有版權 愛怎麼抄就怎麼抄
+            </p>
+        </footer>
 </body>
 </html>

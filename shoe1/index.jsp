@@ -67,41 +67,80 @@
             
         </div>
     </header>
-    <nav>
-        <div class="menu">
-            <ul>
-                
-                <li class="menu1">
-                    <div class="dropdown">
-                        <button class="dropbtn">常見問題</button>
-                        <div class="dropdown-content">
-                            <a href="">Q&A</a>
-                            <a href="">如何挑選</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="menu1"> 
-                    <a href="member.html" style="text-decoration: none" class="menubtn">關於我們</a>
-                </li>
-
-                <li class="menu1">
-                    <div class="dropdown">
-                        <a href="model.jsp"><button class="dropbtn" >商品分類</button></a>
-                        <div class="dropdown-content">
-                            <a href="model.jsp#skater">板鞋<br></a>
-                            <a href="model.jsp#sneaker">運動鞋</a>
-                            <a href="model.jsp#boots">靴子<br></a>
-                            <a href="model.jsp#casual">休閒鞋<br></a>
-                        </div>
-                    </div>
-                </li>
-                <li class="menu1">
-                    <a href="momber_form.html" style="text-decoration: none;" class="menubtn">回饋表單</a>
-                </li>
-            </ul>
-        </div>
-
-    </nav>
+     <%
+        String acct=String.valueOf(session.getAttribute("acct"));
+        if(acct.equals("admin")){
+            out.println("<nav style='width:70%; margin-left: 15%;'>");
+            out.println("<div class='menu'>");
+            out.println("<ul>");
+            out.println("<li class='menu1'>");
+            out.println("<div class='dropdown'>");
+            out.println("<button class='dropbtn'>常見問題</button>");
+            out.println("<div class='dropdown-content'>");
+            out.println("<a href=''>Q&A</a>");
+            out.println("<a href=''>如何挑選</a>");
+            out.println("</div>");
+            out.println("</div>");
+            out.println("</li>");
+            out.println("<li class='menu1'>");
+            out.println("<a href='member.html' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("</li>");
+            out.println("<li class='menu1'>");
+            out.println("<div class='dropdown'>");
+            out.println("<a href='model.jsp'><button class='dropbtn' >商品分類</button></a>");
+            out.println("<div class='dropdown-content'>");
+            out.println("<a href='model.jsp#skater'>板鞋<br></a>");
+            out.println("<a href='model.jsp#sneaker'>運動鞋</a>");
+            out.println("<a href='model.jsp#boots'>靴子<br></a>");
+            out.println("<a href='model.jsp#casual'>休閒鞋<br></a>");
+            out.println("</div>");
+            out.println("</div>");
+            out.println("</li>");
+            out.println("<li class='menu1'>");
+            out.println("<a href='momber_form.html' style='text-decoration: none;' class='menubtn'>回饋表單</a>");
+            out.println("</li>");
+            out.println("<li class='menu1'>");
+            out.println("<a href='administrator.jsp' style='text-decoration: none;' class='menubtn'>後台管理</a>");
+            out.println("</li>");
+            out.println("</ul>");
+            out.println("</div>");
+            out.println("</nav> ");
+        }
+        else{
+            out.println("<nav>");
+            out.println("<div class='menu'>");
+            out.println("<ul>");
+            out.println("<li class='menu1'>");
+            out.println("<div class='dropdown'>");
+            out.println("<button class='dropbtn'>常見問題</button>");
+            out.println("<div class='dropdown-content'>");
+            out.println("<a href=''>Q&A</a>");
+            out.println("<a href=''>如何挑選</a>");
+            out.println("</div>");
+            out.println("</div>");
+            out.println("</li>");
+            out.println("<li class='menu1'>");
+            out.println("<a href='member.html' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("</li>");
+            out.println("<li class='menu1'>");
+            out.println("<div class='dropdown'>");
+            out.println("<a href='model.jsp'><button class='dropbtn' >商品分類</button></a>");
+            out.println("<div class='dropdown-content'>");
+            out.println("<a href='model.jsp#skater'>板鞋<br></a>");
+            out.println("<a href='model.jsp#sneaker'>運動鞋</a>");
+            out.println("<a href='model.jsp#boots'>靴子<br></a>");
+            out.println("<a href='model.jsp#casual'>休閒鞋<br></a>");
+            out.println("</div>");
+            out.println("</div>");
+            out.println("</li>");
+            out.println("<li class='menu1'>");
+            out.println("<a href='momber_form.html' style='text-decoration: none;' class='menubtn'>回饋表單</a>");
+            out.println("</li>");
+            out.println("</ul>");
+            out.println("</div>");
+            out.println("</nav> ");
+        }
+    %>
 
     <!--     以上為HEADER        -->
 

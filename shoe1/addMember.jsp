@@ -40,6 +40,7 @@
                 con.createStatement().execute(sql);
                 sql="UPDATE `member` SET `picture`='"+new_picture+"' WHERE `account`='"+session.getAttribute("acct")+"'";
                 con.createStatement().execute(sql);
+                con.close();
                 out.println("更新成功!! 請<a href='member.jsp'>按此</a>回會員畫面!!");
             }
         }
