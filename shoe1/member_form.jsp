@@ -7,17 +7,17 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品頁面</title>
-    <style>
-         @import url(asset/css/1.css);
-    </style>
+    <title>會員回饋</title>
+
+    <link rel="stylesheet" type="text/css" href="./asset/css/1.css" />
     <link rel="stylesheet" type="text/css" href="./asset/css/login.css" />
-    <link rel="stylesheet" type="text/css" href="./asset/js/sign.js" />
-   
+    <link rel="stylesheet" type="text/css" href="./asset/css/member_form.css" />
+
 </head>
 <body>
-    <header>
+<header>
 
         <div class="top">
             <div class="ss22">
@@ -67,7 +67,7 @@
             
         </div>
     </header>
-     <%
+    <%
         String acct=String.valueOf(session.getAttribute("acct"));
         if(acct.equals("admin")){
             out.println("<nav style='width:70%; margin-left: 15%;'>");
@@ -141,7 +141,6 @@
             out.println("</nav> ");
         }
     %>
-
     <!--     以上為HEADER        -->
 
 <div  id="login_box1" class="login_box">
@@ -204,139 +203,75 @@
     
 </div>
 <!--     以上為登入畫面        -->
-    <section>
-
-        <%
-        if(con.isClosed()){
-            out.println("建立連線失敗");
-        }
-        else{
-            sql="SELECT * FROM `product` WHERE `category`='板鞋'";
-            ResultSet rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
-            out.println("<div class='cls'>");
-            out.println("<div id='skater'>");
-            out.println("<div class='vertical-rotate-cell'>");
-            out.println("<div class='vertical-rotate-container grid-central'>");
-            out.println("<div class='vertical-rotate-front text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>板鞋</span>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-central'>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-behind text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>Skater</span>");
-            out.println("</div>");
-            out.println("</div>");
-            out.println("</div><br>");
-            out.println("</div>");
-            while(rs.next()){
-                out.println("<div class='shoe1'>");
-                out.println("<form method='post' action='product.jsp'>");
-                out.println("<input type='image' class='picture' src='"+rs.getString(3)+"'>");
-                out.println("<p class='shoename'><div class=''>"+rs.getString(2)+"</div></p>");
-                out.println("<input type='hidden' name='shoe' value='"+rs.getString(1)+"'>");
-                out.println("</form>");
-                out.println("</div>");
-            }
-            out.println("</div>");
-
-
-            sql="SELECT * FROM `product` WHERE `category`='運動鞋'";
-            rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
-            out.println("<div class='cls'>");
-            out.println("<div id='skater'>");
-            out.println("<div class='vertical-rotate-cell'>");
-            out.println("<div class='vertical-rotate-container grid-central'>");
-            out.println("<div class='vertical-rotate-front text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>運動鞋</span>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-central'>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-behind text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>Sneakers</span>");
-            out.println("</div>");
-            out.println("</div>");
-            out.println("</div><br>");
-            out.println("</div>");
-            while(rs.next()){
-                out.println("<div class='shoe1'>");
-                out.println("<form method='post' action='product.jsp'>");
-                out.println("<input type='image' class='picture' src='"+rs.getString(3)+"'>");
-                out.println("<p class='shoename'><div class=''>"+rs.getString(2)+"</div></p>");
-                out.println("<input type='hidden' name='shoe' value='"+rs.getString(1)+"'>");
-                out.println("</form>");
-                out.println("</div>");
-            }
-            out.println("</div>");
+<div class="member_form_box">
+    <div class="member_form_title_box">
+        <label class="member_form_title">回饋單</label>
+    </div>
+    <form class="cos" action="addFeedback.jsp">
+        <div class="member_form_text_box">
+            <label class="member_form_text">這是第幾次來本店消費:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r2" name="times"  value="1次" ><label class="member_info2" >1次</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r2" name="times"  value="2次" ><label class="member_info2" >2次</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r2" name="times"  value="2次以上" ><label class="member_info2" >2次以上</label>
+        </div>
+        <div class="member_form_text_box">
+            <label class="member_form_text">此次消費金額:&nbsp;</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="amount"  value="1000元↓" ><label class="member_info2" >1000元↓</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="amount"  value="1000-2000" ><label class="member_info2" >1000-2000</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="amount"  value="2000元↑" ><label class="member_info2" >2000元↑</label>
+        </div>    <div class="member_form_text_box">
+            <label class="member_form_text">您最喜歡的鞋款:&nbsp;</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="category"  value="板鞋" ><label class="member_info2" >板鞋</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="category"  value="運動鞋" ><label class="member_info2" >運動鞋</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="category"  value="靴子" ><label class="member_info2" >靴子</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="category"  value="休閒鞋" ><label class="member_info2" >休閒鞋</label>
+        </div>    <div class="member_form_text_box">
+            <label class="member_form_text">我們的網頁做的:&nbsp;&emsp;&emsp;&emsp;&emsp;</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="evaluation"  value="不錯" ><label class="member_info2" >不錯</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="evaluation"  value="還行" ><label class="member_info2" >還行</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="evaluation"  value="非常好" ><label class="member_info2" >非常好</label>
+        </div>    <div class="member_form_text_box">
+            <label class="member_form_text">對產品滿意度:&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="psatisfaction"  value="不好" ><label class="member_info2" >不好</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="psatisfaction"  value="普通" ><label class="member_info2" >普通</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="psatisfaction"  value="很喜歡" ><label class="member_info2" >很喜歡</label>
+        </div>    <div class="member_form_text_box">
+            <label class="member_form_text">會不會推薦給朋友:&nbsp;&emsp;&emsp;&emsp;&emsp;</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="recommend"  value="會" ><label class="member_info2" >會</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="recommend"  value="不會" ><label class="member_info2" >不會</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="recommend"  value="已推推" ><label class="member_info2" >已推推</label>
+        </div>    <div class="member_form_text_box">
+            <label class="member_form_text">挑鞋最重視:&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="point"  value="顏色" ><label class="member_info2" >顏色</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="point"  value="潮流" ><label class="member_info2" >潮流</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="point"  value="女友喜歡" ><label class="member_info2" >女友喜歡</label>
+        </div>    <div class="member_form_text_box">
+            <label class="member_form_text">從哪邊得知本網站:&nbsp;</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="where"  value="報紙" ><label class="member_info2" >報紙</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="where"  value="朋友連結" ><label class="member_info2" >朋友連結</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="where"  value="電視廣告" ><label class="member_info2" >電視廣告</label>
+        </div>           
+        <div class="member_form_text_box">
+            <label class="member_form_text">網頁載入速度: &emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="speed"  value="慢死了" ><label class="member_info2" >慢死了</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="speed"  value="普通" ><label class="member_info2" >普通</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="speed"  value="極速" ><label class="member_info2" >極速</label>
+        </div>
+        <div class="member_form_text_box">
+            <lable class="member_form_text2">備註:</lable>
+            <textarea class="ssayy" name="remark" cols="1" rows="1" placeholder="寫下想法吧"></textarea>   
+        </div>
+        <input type="submit" value="完成!" class="gogo5">
+    </form>
+</div>
 
 
-            sql="SELECT * FROM `product` WHERE `category`='靴子'";
-            rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
-            out.println("<div class='cls'>");
-            out.println("<div id='skater'>");
-            out.println("<div class='vertical-rotate-cell'>");
-            out.println("<div class='vertical-rotate-container grid-central'>");
-            out.println("<div class='vertical-rotate-front text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>靴子</span>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-central'>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-behind text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>Boots</span>");
-            out.println("</div>");
-            out.println("</div>");
-            out.println("</div><br>");
-            out.println("</div>");
-            while(rs.next()){
-                out.println("<div class='shoe1'>");
-                out.println("<form method='post' action='product.jsp'>");
-                out.println("<input type='image' class='picture' src='"+rs.getString(3)+"'>");
-                out.println("<p class='shoename'><div class=''>"+rs.getString(2)+"</div></p>");
-                out.println("<input type='hidden' name='shoe' value='"+rs.getString(1)+"'>");
-                out.println("</form>");
-                out.println("</div>");
-            }
-            out.println("</div>");
 
-
-            sql="SELECT * FROM `product` WHERE `category`='休閒鞋'";
-            rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
-            out.println("<div class='cls'>");
-            out.println("<div id='skater'>");
-            out.println("<div class='vertical-rotate-cell'>");
-            out.println("<div class='vertical-rotate-container grid-central'>");
-            out.println("<div class='vertical-rotate-front text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>休閒鞋</span>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-central'>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-behind text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>Casual</span>");
-            out.println("</div>");
-            out.println("</div>");
-            out.println("</div><br>");
-            out.println("</div>");
-            while(rs.next()){
-                out.println("<div class='shoe1'>");
-                out.println("<form method='post' action='product.jsp'>");
-                out.println("<input type='image' class='picture' src='"+rs.getString(3)+"'>");
-                out.println("<p class='shoename'><div class=''>"+rs.getString(2)+"</div></p>");
-                out.println("<input type='hidden' name='shoe' value='"+rs.getString(1)+"'>");
-                out.println("</form>");
-                out.println("</div>");
-            }
-            out.println("</div>");
-
-            con.close();
-        }
-        %>    
-    </section>
-
-    <footer>
-        <p> 
-            MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
-            沒有版權 愛怎麼抄就怎麼抄
-        </p>
-    </footer>
-    <script src="./asset/js/sign.js"></script>
+<script src="./asset/js/sign.js"></script>
+<footer>
+    <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
+        沒有版權 愛怎麼抄就怎麼抄
+    </p>
+</footer>
 </body>
 </html>

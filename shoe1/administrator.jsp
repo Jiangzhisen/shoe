@@ -98,7 +98,7 @@
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='momber_form.html' style='text-decoration: none;' class='menubtn'>回饋表單</a>");
+            out.println("<a href='member_form.jsp' style='text-decoration: none;' class='menubtn'>回饋表單</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<a href='administrator.jsp' style='text-decoration: none;' class='menubtn'>後台管理</a>");
@@ -135,7 +135,7 @@
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='momber_form.html' style='text-decoration: none;' class='menubtn'>回饋表單</a>");
+            out.println("<a href='member_form.jsp' style='text-decoration: none;' class='menubtn'>回饋表單</a>");
             out.println("</li>");
             out.println("</ul>");
             out.println("</div>");
@@ -205,7 +205,7 @@
 </div>
 <!--     以上為登入畫面        -->
     
-        <div class="QAZ" style="height:2500px; ">
+        <div class="QAZ" style="height:2900px; ">
             <div class="lp">
                 <div class="cont1">
         
@@ -296,7 +296,21 @@
         
                         <h1>訂單紀錄</h1>
                         <br><br>
-                        <form method="get" action="">
+                        <form method="post" action="order_record.jsp">
+                            <div class="tab"></div>
+                            <br>
+                            <input type="submit" value="查詢" class="submit" style="cursor: pointer;">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="cont2">
+        
+                    <div class="login">
+        
+                        <h1>回饋反映</h1>
+                        <br><br>
+                        <form method="post" action="feedback_record.jsp">
                             <div class="tab"></div>
                             <br>
                             <input type="submit" value="查詢" class="submit" style="cursor: pointer;">

@@ -105,7 +105,7 @@
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='momber_form.html' style='text-decoration: none;' class='menubtn'>回饋表單</a>");
+            out.println("<a href='member_form.jsp' style='text-decoration: none;' class='menubtn'>回饋表單</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<a href='administrator.jsp' style='text-decoration: none;' class='menubtn'>後台管理</a>");
@@ -142,7 +142,7 @@
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='momber_form.html' style='text-decoration: none;' class='menubtn'>回饋表單</a>");
+            out.println("<a href='member_form.jsp' style='text-decoration: none;' class='menubtn'>回饋表單</a>");
             out.println("</li>");
             out.println("</ul>");
             out.println("</div>");

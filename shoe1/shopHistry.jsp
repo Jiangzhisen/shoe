@@ -7,17 +7,19 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品頁面</title>
-    <style>
-         @import url(asset/css/1.css);
-    </style>
+    <title>消費紀錄</title>
+    <link rel="stylesheet" type="text/css" href="./asset/css/mamber.css" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/shopHistry.css" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/1.css" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/3.css" />
     <link rel="stylesheet" type="text/css" href="./asset/css/login.css" />
     <link rel="stylesheet" type="text/css" href="./asset/js/sign.js" />
-   
+
 </head>
 <body>
-    <header>
+<header>
 
         <div class="top">
             <div class="ss22">
@@ -67,7 +69,7 @@
             
         </div>
     </header>
-     <%
+    <%
         String acct=String.valueOf(session.getAttribute("acct"));
         if(acct.equals("admin")){
             out.println("<nav style='width:70%; margin-left: 15%;'>");
@@ -141,7 +143,6 @@
             out.println("</nav> ");
         }
     %>
-
     <!--     以上為HEADER        -->
 
 <div  id="login_box1" class="login_box">
@@ -204,136 +205,36 @@
     
 </div>
 <!--     以上為登入畫面        -->
-    <section>
-
-        <%
-        if(con.isClosed()){
-            out.println("建立連線失敗");
-        }
-        else{
-            sql="SELECT * FROM `product` WHERE `category`='板鞋'";
-            ResultSet rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
-            out.println("<div class='cls'>");
-            out.println("<div id='skater'>");
-            out.println("<div class='vertical-rotate-cell'>");
-            out.println("<div class='vertical-rotate-container grid-central'>");
-            out.println("<div class='vertical-rotate-front text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>板鞋</span>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-central'>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-behind text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>Skater</span>");
-            out.println("</div>");
-            out.println("</div>");
-            out.println("</div><br>");
-            out.println("</div>");
-            while(rs.next()){
-                out.println("<div class='shoe1'>");
-                out.println("<form method='post' action='product.jsp'>");
-                out.println("<input type='image' class='picture' src='"+rs.getString(3)+"'>");
-                out.println("<p class='shoename'><div class=''>"+rs.getString(2)+"</div></p>");
-                out.println("<input type='hidden' name='shoe' value='"+rs.getString(1)+"'>");
-                out.println("</form>");
-                out.println("</div>");
-            }
-            out.println("</div>");
+<%
+    
 
 
-            sql="SELECT * FROM `product` WHERE `category`='運動鞋'";
-            rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
-            out.println("<div class='cls'>");
-            out.println("<div id='skater'>");
-            out.println("<div class='vertical-rotate-cell'>");
-            out.println("<div class='vertical-rotate-container grid-central'>");
-            out.println("<div class='vertical-rotate-front text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>運動鞋</span>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-central'>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-behind text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>Sneakers</span>");
-            out.println("</div>");
-            out.println("</div>");
-            out.println("</div><br>");
-            out.println("</div>");
-            while(rs.next()){
-                out.println("<div class='shoe1'>");
-                out.println("<form method='post' action='product.jsp'>");
-                out.println("<input type='image' class='picture' src='"+rs.getString(3)+"'>");
-                out.println("<p class='shoename'><div class=''>"+rs.getString(2)+"</div></p>");
-                out.println("<input type='hidden' name='shoe' value='"+rs.getString(1)+"'>");
-                out.println("</form>");
-                out.println("</div>");
-            }
-            out.println("</div>");
+
+%>
 
 
-            sql="SELECT * FROM `product` WHERE `category`='靴子'";
-            rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
-            out.println("<div class='cls'>");
-            out.println("<div id='skater'>");
-            out.println("<div class='vertical-rotate-cell'>");
-            out.println("<div class='vertical-rotate-container grid-central'>");
-            out.println("<div class='vertical-rotate-front text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>靴子</span>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-central'>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-behind text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>Boots</span>");
-            out.println("</div>");
-            out.println("</div>");
-            out.println("</div><br>");
-            out.println("</div>");
-            while(rs.next()){
-                out.println("<div class='shoe1'>");
-                out.println("<form method='post' action='product.jsp'>");
-                out.println("<input type='image' class='picture' src='"+rs.getString(3)+"'>");
-                out.println("<p class='shoename'><div class=''>"+rs.getString(2)+"</div></p>");
-                out.println("<input type='hidden' name='shoe' value='"+rs.getString(1)+"'>");
-                out.println("</form>");
-                out.println("</div>");
-            }
-            out.println("</div>");
-
-
-            sql="SELECT * FROM `product` WHERE `category`='休閒鞋'";
-            rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
-            out.println("<div class='cls'>");
-            out.println("<div id='skater'>");
-            out.println("<div class='vertical-rotate-cell'>");
-            out.println("<div class='vertical-rotate-container grid-central'>");
-            out.println("<div class='vertical-rotate-front text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>休閒鞋</span>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-central'>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-behind text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>Casual</span>");
-            out.println("</div>");
-            out.println("</div>");
-            out.println("</div><br>");
-            out.println("</div>");
-            while(rs.next()){
-                out.println("<div class='shoe1'>");
-                out.println("<form method='post' action='product.jsp'>");
-                out.println("<input type='image' class='picture' src='"+rs.getString(3)+"'>");
-                out.println("<p class='shoename'><div class=''>"+rs.getString(2)+"</div></p>");
-                out.println("<input type='hidden' name='shoe' value='"+rs.getString(1)+"'>");
-                out.println("</form>");
-                out.println("</div>");
-            }
-            out.println("</div>");
-
-            con.close();
-        }
-        %>    
-    </section>
-
+<div class="member_box_h" >
+        <div class="member_histry_box" >
+            <pre class="member_info" >購買日期:2022/6/1<br>消費金額:10000<br>付款方式:郵寄<br>備註:白癡班森</pre>
+        </div>
+        <div class="carbox1">
+            <div class="shoepic">
+                <img class = "pic" src="./asset/image/s1.jpg">
+            </div>
+            <div class="detail">
+                <h1 class="tit2">有夠中二板鞋</h1>
+                <p>
+                <b>編號:</b> A0001<br>
+                <b>顏色:</b> 白色<br>
+                <b>數量:</b> 2<br>
+                <b>價錢: </b>$ 3078<br>
+                <b>尺碼: </b>26<br><br><br>
+                </p>
+            </div>
+        </div>
+</div>
     <footer>
-        <p> 
-            MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
+        <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
             沒有版權 愛怎麼抄就怎麼抄
         </p>
     </footer>

@@ -14,23 +14,32 @@
             String address=request.getParameter("address");
             String method=request.getParameter("method");
             String remark=request.getParameter("remark");
-            sql="SELECT *, (`quantity` * `price`) FROM `shoppingcart` WHERE `account`='"+cart_acct+"'";
-            ResultSet rs=con.createStatement().executeQuery(sql);
-            
-            
-            while(rs.next()){
-                String prodname=rs.getString(2);
-                String qua=rs.getString(5);
-                String tolpri=rs.getString(9);
+            java.sql.Date new_date=new java.sql.Date(System.currentTimeMillis());
 
-                sql="INSERT order_record (`account`, `pname`, `tolqua`, `tolpri`, `address`, `method`, `remark`)";
+            sql="SELECT * FROM `member` WHERE `account`='"+cart_acct+"'";
+            ResultSet rs=con.createStatement().executeQuery(sql);
+            rs.next();
+            String name=rs.getString(3);
+
+            sql="SELECT *, (`quantity` * `price`) FROM `shoppingcart` WHERE `account`='"+cart_acct+"'";
+            ResultSet cartrs=con.createStatement().executeQuery(sql);
+            
+            
+            while(cartrs.next()){
+                String prodname=cartrs.getString(2);
+                String qua=cartrs.getString(5);
+                String tolpri=cartrs.getString(9);
+
+                sql="INSERT order_record (`account`, `name`, `pname`, `tolqua`, `tolpri`, `address`, `method`, `remark`, `Putdate`)";
                 sql+="VALUES ('"+cart_acct+"', ";
+                sql+="'"+name+"', ";
                 sql+="'"+prodname+"', ";
                 sql+="'"+qua+"', ";
                 sql+="'"+tolpri+"', ";
                 sql+="'"+address+"', ";
                 sql+="'"+method+"', ";
-                sql+="'"+remark+"')";
+                sql+="'"+remark+"', ";
+                sql+="'"+new_date+"')";
                 con.createStatement().execute(sql);
             }
 
