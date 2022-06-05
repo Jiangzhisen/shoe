@@ -25,10 +25,16 @@ if(request.getParameter("acct1") !=null && !request.getParameter("acct1").equals
     }
     else{
         con.close();
-        out.println("帳號密碼不符 !! <a href='index.jsp'>按此</a>重新登入");
+        out.println("<script language='javascript'>");
+        out.println("alert('帳號密碼不符 ! !');");
+        out.println("window.location.href='index.jsp'");
+        out.println("</script>");
     }
 }
 else{
-    response.sendRedirect("index.jsp");
+    out.println("<script language='javascript'>");
+    out.println("alert('請輸入帳號密碼 ! !');");
+    out.println("window.location.href='index.jsp'");
+    out.println("</script>");
 }
 %>

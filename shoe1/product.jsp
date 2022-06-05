@@ -27,7 +27,7 @@
                 <img class="s2ch2" src="./asset/image/2ch.png">
             </div>
             
-                <form class="s22">
+                <form class="s22" action="search_result.jsp">
                     <input class="s222" type="text" name="s2ch" placeholder="搜一下" >
                 </form>
             </div>
@@ -62,7 +62,13 @@
                         out.println("<a href='shoppingcar.jsp'><img class='log' src='./asset/image/c1.png'></a>");
                     }
                     else{
-                        out.println("<a href='index.jsp'><img class='log' src='./asset/image/c1.png'></a>");
+                        out.println("<script language='javascript'>");
+                        out.println("function hint(){ ");
+                        out.println("alert('您尚未登入 ! !');");
+                        out.println("window.location.href='index.jsp'");
+                        out.println("}");
+                        out.println("</script>");
+                        out.println("<a onclick='hint()' style='cursor:pointer;'><img class='log' src='./asset/image/c1.png'></a>");
                     }
                 %>
             </div>
@@ -85,7 +91,7 @@
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='member.html' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -122,7 +128,7 @@
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='member.html' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -230,16 +236,16 @@
                 out.println("</p>");
                 out.println("<div class='but'>");
                 out.println("<li>");
-                out.println("<button><b>"+rs.getString(8)+"</b></button>");
+                out.println("<button><b>25</b></button>");
                 out.println("</li>");
                 out.println("<li>");
-                out.println("<button><b>"+rs.getString(9)+"</b></button>");
+                out.println("<button><b>26</b></button>");
                 out.println("</li>");
                 out.println("<li>");
-                out.println("<button><b>"+rs.getString(10)+"</b></button>");
+                out.println("<button><b>27</b></button>");
                 out.println("</li>");
                 out.println("<li>");
-                out.println("<button><b>"+rs.getString(11)+"</b></button>");
+                out.println("<button><b>28</b></button>");
                 out.println("</li>");
                 out.println("</div>");
                 out.println("<form class='shopp' action='addtocart.jsp'>");

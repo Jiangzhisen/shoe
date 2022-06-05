@@ -27,7 +27,7 @@
                 <img class="s2ch2" src="./asset/image/2ch.png">
             </div>
             
-                <form class="s22">
+                <form class="s22" action="search_result.jsp">
                     <input class="s222" type="text" name="s2ch" placeholder="搜一下" >
                 </form>
             </div>
@@ -62,7 +62,13 @@
                         out.println("<a href='shoppingcar.jsp'><img class='log' src='./asset/image/c1.png'></a>");
                     }
                     else{
-                        out.println("<a href='index.jsp'><img class='log' src='./asset/image/c1.png'></a>");
+                        out.println("<script language='javascript'>");
+                        out.println("function hint(){ ");
+                        out.println("alert('您尚未登入 ! !');");
+                        out.println("window.location.href='index.jsp'");
+                        out.println("}");
+                        out.println("</script>");
+                        out.println("<a onclick='hint()' style='cursor:pointer;'><img class='log' src='./asset/image/c1.png'></a>");
                     }
                 %>
             </div>
@@ -85,7 +91,7 @@
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='member.html' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -122,7 +128,7 @@
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='member.html' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -206,33 +212,87 @@
 </div>
 <!--     以上為登入畫面        -->
 <%
-    
+    if(con.isClosed()){
+        out.println("建立連線失敗");
+    }
+    else{
+        if(session.getAttribute("acct") != null){
+            acct=String.valueOf(session.getAttribute("acct"));
+            sql="SELECT `account`, `Putdate`, `method`, `remark` FROM `order_record` WHERE `account`='"+acct+"' GROUP BY `Putdate` ORDER BY `Putdate` DESC";
+            ResultSet rs=con.createStatement().executeQuery(sql);
+
+            sql="SELECT `account`, `Putdate`, `method`, `remark` FROM `order_record` WHERE `account`='"+acct+"' GROUP BY `Putdate` ORDER BY `Putdate` DESC";
+            ResultSet rrs=con.createStatement().executeQuery(sql);
 
 
+            if(rrs.next()){
+                while(rs.next()){
+                    out.println("<div class='member_box_h' >");
+                    String Putdate=rs.getString(2);
+                    sql="SELECT * FROM `order_record` WHERE `account`='"+acct+"' AND `Putdate`='"+Putdate+"'";
+                    ResultSet ors=con.createStatement().executeQuery(sql);
 
+                    sql="SELECT SUM(`tolpri`) FROM `order_record` WHERE `account`='"+acct+"' AND `Putdate`='"+Putdate+"' GROUP BY `Putdate`";
+                    ResultSet tolrs=con.createStatement().executeQuery(sql);
+                    tolrs.next();
+                    String amount=tolrs.getString(1);
+                    String buytime=rs.getString(2);
+                    String method=rs.getString(3);
+                    String remark=rs.getString(4);
+
+
+                    out.println("<div class='member_histry_box' >");
+                    out.println("<pre class='member_info' >購買日期:"+Putdate+"<br>消費金額:"+amount+"<br>付款方式:"+method+"<br>備註:"+remark+"</pre>");
+                    out.println("</div>");
+
+                    while(ors.next()){
+                        String pname=ors.getString(4);
+                        String quantity=ors.getString(5);
+                        String price=ors.getString(6);
+                        sql="SELECT * FROM `product` WHERE `pname`='"+pname+"'";
+                        ResultSet prors=con.createStatement().executeQuery(sql);
+                        prors.next();
+                        String picture=prors.getString(3);
+                        String color=prors.getString(7);
+                        String size=prors.getString(9);
+
+                        out.println("<div class='carbox1'>");
+                        out.println("<div class='shoepic'>");
+                        out.println("<img class = 'pic' src='"+picture+"'>");
+                        out.println("</div>");
+                        out.println("<div class='detail'>");
+                        out.println("<h1 class='tit2'>"+pname+"</h1>");
+                        out.println("<p>");
+                        out.println("<b>顏色:</b> "+color+"<br>");
+                        out.println("<b>數量:</b> "+quantity+"<br>");
+                        out.println("<b>價錢: </b>$ "+price+"<br>");
+                        out.println("<b>尺碼: </b>"+size+"<br><br><br>");
+                        out.println("</p>");
+                        out.println("</div>");
+                        out.println("</div>");
+                    }  
+                    out.println("</div>");
+                }
+            }
+                else{
+                    out.println("<br><br><br><br><br>");
+                    out.println("<div class='member_box_h' >");
+                    out.println("<div class='member_histry_box' >");
+                    out.println("<pre class='member_info' ><h1>您並沒有任何的消費紀錄!!</h1></pre>");
+                    out.println("</div>");
+                    out.println("</div>");
+    }
+ }
+        else{
+            con.close();
+            out.println("<script language='javascript'>");
+            out.println("alert('您尚未登入 ! !');");
+            out.println("window.location.href='index.jsp'");
+            out.println("</script>");
+        }
+    }
 %>
-
-
-<div class="member_box_h" >
-        <div class="member_histry_box" >
-            <pre class="member_info" >購買日期:2022/6/1<br>消費金額:10000<br>付款方式:郵寄<br>備註:白癡班森</pre>
-        </div>
-        <div class="carbox1">
-            <div class="shoepic">
-                <img class = "pic" src="./asset/image/s1.jpg">
-            </div>
-            <div class="detail">
-                <h1 class="tit2">有夠中二板鞋</h1>
-                <p>
-                <b>編號:</b> A0001<br>
-                <b>顏色:</b> 白色<br>
-                <b>數量:</b> 2<br>
-                <b>價錢: </b>$ 3078<br>
-                <b>尺碼: </b>26<br><br><br>
-                </p>
-            </div>
-        </div>
-</div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <footer>
         <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
             沒有版權 愛怎麼抄就怎麼抄

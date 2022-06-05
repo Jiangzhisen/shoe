@@ -1,6 +1,8 @@
 <%@page contentType="text/html"%> 
 <%@page pageEncoding="UTF-8"%>
 <%@page import = "java.sql.*" %> 
+<%@page import= "java.io.*,java.util.*" %>
+<%@page import= "javax.servlet.*,java.text.*" %>
 <%@include file = "config.jsp" %>
 <%
     if(con.isClosed()){
@@ -14,7 +16,8 @@
             String address=request.getParameter("address");
             String method=request.getParameter("method");
             String remark=request.getParameter("remark");
-            java.sql.Date new_date=new java.sql.Date(System.currentTimeMillis());
+            SimpleDateFormat setDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            String new_date = setDateFormat.format(Calendar.getInstance().getTime());
 
             sql="SELECT * FROM `member` WHERE `account`='"+cart_acct+"'";
             ResultSet rs=con.createStatement().executeQuery(sql);
@@ -41,6 +44,17 @@
                 sql+="'"+remark+"', ";
                 sql+="'"+new_date+"')";
                 con.createStatement().execute(sql);
+
+                sql="SELECT * FROM `product` WHERE `pname`='"+prodname+"'";
+                ResultSet origrs=con.createStatement().executeQuery(sql);
+                origrs.next();
+                String origqua=origrs.getString(5);
+                int originalqua=Integer.parseInt(origqua);
+                int buyqua=Integer.parseInt(qua);
+                int nowqua=originalqua-buyqua;
+
+                sql="UPDATE `product` SET `quantity`='"+nowqua+"' WHERE `pname`='"+prodname+"'";
+                con.createStatement().execute(sql);
             }
 
 
@@ -48,11 +62,17 @@
             con.createStatement().execute(sql);
 
             con.close();
-            out.println("<h1>送出訂單成功，請<a href='index.jsp' style='color: blue;'>按此</a>回到首頁</h1>");
+            out.println("<script language='javascript'>");
+            out.println("alert('送出訂單成功 ! !');");
+            out.println("window.location.href='index.jsp'");
+            out.println("</script>");
         }
         else{
             con.close();
-            out.println("<h1>您尚未登入，請<a href='index.jsp' style='color: blue;'>按此</a>回到首頁</h1>");
+            out.println("<script language='javascript'>");
+            out.println("alert('您尚未登入 ! !');");
+            out.println("window.location.href='index.jsp'");
+            out.println("</script>");
         }
     }
 

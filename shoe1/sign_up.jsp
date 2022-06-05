@@ -31,14 +31,23 @@
                 con.createStatement().execute(sql);
                 session.setAttribute("acct", new_acct);
                 con.close();
-                out.println("您已註冊成功，點<a href='member_edit.jsp'>這裡</a>進入會員資料編輯畫面");
+                out.println("<script language='javascript'>");
+                out.println("alert('您已註冊成功 ! !');");
+                out.println("window.location.href='member_edit.jsp'");
+                out.println("</script>");
             }
             catch(SQLException sExec){
-                out.println("此帳號已被註冊，點<a href='index.jsp'>這裡</a>回首頁");
+                out.println("<script language='javascript'>");
+                out.println("alert('此帳號已被註冊 ! !');");
+                out.println("window.location.href='index.jsp'");
+                out.println("</script>");
             }
         }
         else{
-            out.println("欄位輸入錯誤,點<a href='index.jsp'>這裡</a>回首頁");
+            out.println("<script language='javascript'>");
+            out.println("alert('欄位輸入錯誤 ! !');");
+            out.println("window.location.href='index.jsp'");
+            out.println("</script>");
         }
     }
     %>

@@ -8,16 +8,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>購物車</title>
-
+    <title>搜尋結果</title>
     <style>
-        @import url(asset/css/3.css);
-        @import url(asset/css/1.css);
+         @import url(asset/css/1.css);
     </style>
     <link rel="stylesheet" type="text/css" href="./asset/css/login.css" />
     <link rel="stylesheet" type="text/css" href="./asset/js/sign.js" />
+   
 </head>
-
 <body>
     <header>
 
@@ -170,7 +168,7 @@
                         <div class="tab"></div>
                         <input type="password" id="pass" placeholder="密碼" required name="pass1">
                         <div class="tab"></div>
-                        <input type="submit" value="登入" class="submit" onclick="location.href='#'" style="cursor: pointer;">
+                        <input type="submit" value="登入" class="submit" style="cursor: pointer;">
                     </form>
     
                     <h3 onclick="show2()" style="cursor: pointer;">註冊帳號</h3>
@@ -213,72 +211,51 @@
 </div>
 <!--     以上為登入畫面        -->
     <section>
-        <div class="carbox">
-            <div class="tit2">購物車</div>
-            <%
-                if(con.isClosed()){
-                    out.println("建立連線失敗");
-                }
-                else{
-                    if(session.getAttribute("acct") != null){
-                        request.setCharacterEncoding("UTF-8");
-                        response.setCharacterEncoding("UTF-8");
-                        String cart_acct=String.valueOf(session.getAttribute("acct"));
-                        sql="SELECT *, (`quantity` * `price`) FROM `shoppingcart` WHERE `account`='"+cart_acct+"'";
-                        ResultSet rs=con.createStatement().executeQuery(sql);
 
-                        sql="SELECT *, (`quantity` * `price`) FROM `shoppingcart` WHERE `account`='"+cart_acct+"'";
-                        ResultSet rrs=con.createStatement().executeQuery(sql);
-                        
-                        if(rrs.next()){
-                            while(rs.next()){
-                                out.println("<div class='carbox1'>");
-                                out.println("<div class='shoepic'>");
-                                out.println("<img class = 'pic' src='"+rs.getString(3)+"'>");
-                                out.println("</div>");
-                                out.println("<div class='detail'>");
-                                out.println("<h1 class='tit2'>"+rs.getString(2)+"</h1>");
-                                out.println("<p>");
-                                out.println("<b>顏色:</b>"+rs.getString(4)+"<br>");
-                                out.println("<b>數量:</b>"+rs.getString(5)+"<br>");
-                                out.println("<b>總價:</b>$"+rs.getString(9)+"<br>");
-                                out.println("<b>尺碼:</b>"+rs.getString(7)+"<br>");
-                                out.println("</p>");
-                                out.println("<form class='cont' action='delcart.jsp'>");
-                                out.println("<input type='hidden' name='prodname' value='"+rs.getString(2)+"'>");
-                                out.println("<input class='dele' type='submit' value='刪除'>");
-                                out.println("</form>");
-                                out.println("</div>");
-                                out.println("</div>");
-                            }
-                        }
-                        else{
-                            out.println("<br><br><br><br><br>");
-                            out.println("<h1 style='font-size:80px; text-align:center'>目前購物車裡沒有任何商品!!</h1>");
-                            out.println("<br><br><br><br><br><br><br><br><br><br>");
-                        }
+        <%
+        if(con.isClosed()){
+            out.println("建立連線失敗");
+        }
+        else{
+            String s2ch=request.getParameter("s2ch");
+            sql="SELECT * FROM `product` WHERE `pname` LIKE '%"+s2ch+"%'";
+            ResultSet rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
+            out.println("<div class='cls'>");
+            out.println("<div id='skater'>");
+            out.println("<div class='vertical-rotate-cell'>");
+            out.println("<div class='vertical-rotate-container grid-central'>");
+            out.println("<div class='vertical-rotate-front text-container grid-central'>");
+            out.println("<span class='vertical-rotate-text'>搜尋結果</span>");
+            out.println("</div>");
+            out.println("<div class='vertical-rotate-central'>");
+            out.println("</div>");
+            out.println("<div class='vertical-rotate-behind text-container grid-central'>");
+            out.println("<span class='vertical-rotate-text'>SEARCH RESULTS</span>");
+            out.println("</div>");
+            out.println("</div>");
+            out.println("</div><br>");
+            out.println("</div>");
+            out.println("<br><br><br>");
+            while(rs.next()){
+                out.println("<div class='shoe1'>");
+                out.println("<form method='post' action='product.jsp'>");
+                out.println("<input type='image' class='picture' src='"+rs.getString(3)+"'>");
+                out.println("<p class='shoename'><div class=''>"+rs.getString(2)+"</div></p>");
+                out.println("<input type='hidden' name='shoe' value='"+rs.getString(1)+"'>");
+                out.println("</form>");
+                out.println("</div>");
+            }
+            out.println("</div>");
 
-                    }
-                    else{
-                        con.close();
-                        out.println("<script language='javascript'>");
-                        out.println("alert('您尚未登入 ! !');");
-                        out.println("window.location.href='index.jsp'");
-                        out.println("</script>");
-                    }
-                }
-            %>
-        </div>
+            con.close();
+        }
+        %>
+        <br><br><br><br><br><br><br><br><br>
     </section>
-    <br><br><br><br><br><br><br><br><br><br>
-    <div class="send">
-        <form class="shopp" action="paylist.jsp">
-            <input type="submit" value="確認訂單" class="senta">
-        </form>
-    </div>
-    <br><br><br><br><br>
+
     <footer>
-        <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
+        <p> 
+            MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
             沒有版權 愛怎麼抄就怎麼抄
         </p>
     </footer>

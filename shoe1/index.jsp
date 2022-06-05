@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>靴を買う</title>
     <link rel="stylesheet" type="text/css" href="./asset/css/index_css.css" />
     
     <link rel="stylesheet" type="text/css" href="./asset/css/3.css" />
@@ -25,7 +25,7 @@
                 <img class="s2ch2" src="./asset/image/2ch.png">
             </div>
             
-                <form class="s22">
+                <form class="s22" action="search_result.jsp">
                     <input class="s222" type="text" name="s2ch" placeholder="搜一下" >
                 </form>
             </div>
@@ -60,7 +60,13 @@
                         out.println("<a href='shoppingcar.jsp'><img class='log' src='./asset/image/c1.png'></a>");
                     }
                     else{
-                        out.println("<a href='index.jsp'><img class='log' src='./asset/image/c1.png'></a>");
+                        out.println("<script language='javascript'>");
+                        out.println("function hint(){ ");
+                        out.println("alert('您尚未登入 ! !');");
+                        out.println("window.location.href='index.jsp'");
+                        out.println("}");
+                        out.println("</script>");
+                        out.println("<a onclick='hint()' style='cursor:pointer;'><img class='log' src='./asset/image/c1.png'></a>");
                     }
                 %>
             </div>
@@ -83,7 +89,7 @@
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='member.html' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -120,7 +126,7 @@
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='member.html' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");

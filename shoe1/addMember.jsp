@@ -25,7 +25,10 @@
             String new_phone=request.getParameter("phone");
             String new_addr=request.getParameter("addr");
             if(new_nickname == null || new_nickname.equals("") || new_gender == null || new_gender.equals("") || new_picture == null || new_picture.equals("") || new_mail == null || new_mail.equals("") || new_phone == null || new_phone.equals("") || new_addr == null || new_addr.equals("")){
-                out.print("所有欄位必須都要填答完畢，點<a href='member_edit.jsp'>這裡</a>回到會員資料編輯畫面");
+                out.println("<script language='javascript'>");
+                out.println("alert('所有欄位必須都要填答完畢 ! !');");
+                out.println("window.location.href='member_edit.jsp'");
+                out.println("</script>");
             }
             else{
                 sql="UPDATE `member` SET `nickname`='"+new_nickname+"' WHERE `account`='"+session.getAttribute("acct")+"'";
@@ -41,12 +44,18 @@
                 sql="UPDATE `member` SET `picture`='"+new_picture+"' WHERE `account`='"+session.getAttribute("acct")+"'";
                 con.createStatement().execute(sql);
                 con.close();
-                out.println("更新成功!! 請<a href='member.jsp'>按此</a>回會員畫面!!");
+                out.println("<script language='javascript'>");
+                out.println("alert('更新成功 ! !');");
+                out.println("window.location.href='member.jsp'");
+                out.println("</script>");
             }
         }
         else{
             con.close();
-            out.println("<h1>您尚未登入，請<a href='index.jsp' style='color: blue;'>按此</a>回到首頁</h1>");
+            out.println("<script language='javascript'>");
+            out.println("alert('您尚未登入 ! !');");
+            out.println("window.location.href='index.jsp'");
+            out.println("</script>");
         }
     }
     

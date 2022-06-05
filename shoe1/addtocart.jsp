@@ -41,17 +41,23 @@
                 sql+="'"+strcolor+"', ";
                 sql+="'"+strqua+"', ";
                 sql+="'"+strprice+"', ";
-                sql+="'', ";
+                sql+="'26', ";
                 sql+="'0')";
 
                 con.createStatement().execute(sql);
                 con.close();
-                response.sendRedirect("shoppingcar.jsp");
+                out.println("<script language='javascript'>");
+                out.println("alert('商品加入購物車成功 ! !');");
+                out.println("window.location.href='model.jsp'");
+                out.println("</script>");
             }
         }
         else{
             con.close();
-            out.println("<h1>您尚未登入，請<a href='index.jsp' style='color: blue;'>按此</a>回到首頁</h1>");
+            out.println("<script language='javascript'>");
+            out.println("alert('您尚未登入 ! !');");
+            out.println("window.location.href='index.jsp'");
+            out.println("</script>");
         }
     }
 

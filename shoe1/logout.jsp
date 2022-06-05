@@ -13,7 +13,10 @@
 <body>
     <%
         session.removeAttribute("acct");
-        out.println("您已成功登出，請<a href='index.jsp'>按此</a>回到首頁");
+        out.println("<script language='javascript'>");
+        out.println("alert('您已成功登出 ! !');");
+        out.println("window.location.href='index.jsp'");
+        out.println("</script>");
     %>
 </body>
 </html>

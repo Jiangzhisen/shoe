@@ -46,12 +46,18 @@
             con.createStatement().execute(sql);
 
             con.close();
-            out.println("回饋表單已成功送出，請<a href='index.jsp' style='color: blue;'>按此</a>回到首頁");
+            out.println("<script language='javascript'>");
+            out.println("alert('回饋表單已成功送出 ! !');");
+            out.println("window.location.href='index.jsp'");
+            out.println("</script>");
 
         }
         else{
             con.close();
-            out.println("<h1>您尚未登入，請<a href='index.jsp' style='color: blue;'>按此</a>回到首頁</h1>");
+            out.println("<script language='javascript'>");
+            out.println("alert('您尚未登入 ! !');");
+            out.println("window.location.href='index.jsp'");
+            out.println("</script>");
         }
     }
 

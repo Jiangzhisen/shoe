@@ -27,7 +27,11 @@
             String product=request.getParameter("product");
             java.sql.Date new_date=new java.sql.Date(System.currentTimeMillis());
             if(new_content == null || new_content.equals("")){
-                out.println("<h1>請填寫留言內容，<a href='model.jsp' style='color: blue;'>按此</a>回到產品頁面</h1>");
+            out.println("<script language='javascript'>");
+            out.println("alert('請填寫留言內容 ! !');");
+            out.println("window.location.href='model.jsp'");
+            out.println("</script>");
+
             }
             else{
                 sql="INSERT board (`GBName`, `Content`, `Putdate`, `product`)";
@@ -44,7 +48,10 @@
         }
         else{
             con.close();
-            out.println("<h1>您尚未登入，請<a href='index.jsp' style='color: blue;'>按此</a>回到首頁</h1>");
+            out.println("<script language='javascript'>");
+            out.println("alert('您尚未登入 ! !');");
+            out.println("window.location.href='index.jsp'");
+            out.println("</script>");
         }
     }
     %>
