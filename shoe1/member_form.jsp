@@ -216,50 +216,50 @@
     <form class="cos" action="addFeedback.jsp">
         <div class="member_form_text_box">
             <label class="member_form_text">這是第幾次來本店消費:&nbsp;&nbsp;&nbsp;&nbsp;</label>
-            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r2" name="times"  value="1次" ><label class="member_info2" >1次</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r2" name="times"  value="1次" checked><label class="member_info2" >1次</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r2" name="times"  value="2次" ><label class="member_info2" >2次</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r2" name="times"  value="2次以上" ><label class="member_info2" >2次以上</label>
         </div>
         <div class="member_form_text_box">
             <label class="member_form_text">此次消費金額:&nbsp;</label>
-            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="amount"  value="1000元↓" ><label class="member_info2" >1000元↓</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="amount"  value="1000元↓" checked><label class="member_info2" >1000元↓</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="amount"  value="1000-2000" ><label class="member_info2" >1000-2000</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="amount"  value="2000元↑" ><label class="member_info2" >2000元↑</label>
         </div>    <div class="member_form_text_box">
             <label class="member_form_text">您最喜歡的鞋款:&nbsp;</label>
-            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="category"  value="板鞋" ><label class="member_info2" >板鞋</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="category"  value="板鞋" checked><label class="member_info2" >板鞋</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="category"  value="運動鞋" ><label class="member_info2" >運動鞋</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="category"  value="靴子" ><label class="member_info2" >靴子</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="category"  value="休閒鞋" ><label class="member_info2" >休閒鞋</label>
         </div>    <div class="member_form_text_box">
             <label class="member_form_text">我們的網頁做的:&nbsp;&emsp;&emsp;&emsp;&emsp;</label>
-            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="evaluation"  value="不錯" ><label class="member_info2" >不錯</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="evaluation"  value="不錯" checked><label class="member_info2" >不錯</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="evaluation"  value="還行" ><label class="member_info2" >還行</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="evaluation"  value="非常好" ><label class="member_info2" >非常好</label>
         </div>    <div class="member_form_text_box">
             <label class="member_form_text">對產品滿意度:&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
-            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="psatisfaction"  value="不好" ><label class="member_info2" >不好</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="psatisfaction"  value="不好" checked><label class="member_info2" >不好</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="psatisfaction"  value="普通" ><label class="member_info2" >普通</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="psatisfaction"  value="很喜歡" ><label class="member_info2" >很喜歡</label>
         </div>    <div class="member_form_text_box">
             <label class="member_form_text">會不會推薦給朋友:&nbsp;&emsp;&emsp;&emsp;&emsp;</label>
-            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="recommend"  value="會" ><label class="member_info2" >會</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="recommend"  value="會" checked><label class="member_info2" >會</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="recommend"  value="不會" ><label class="member_info2" >不會</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="recommend"  value="已推推" ><label class="member_info2" >已推推</label>
         </div>    <div class="member_form_text_box">
             <label class="member_form_text">挑鞋最重視:&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
-            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="point"  value="顏色" ><label class="member_info2" >顏色</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="point"  value="顏色" checked><label class="member_info2" >顏色</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="point"  value="潮流" ><label class="member_info2" >潮流</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="point"  value="女友喜歡" ><label class="member_info2" >女友喜歡</label>
         </div>    <div class="member_form_text_box">
             <label class="member_form_text">從哪邊得知本網站:&nbsp;</label>
-            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="where"  value="報紙" ><label class="member_info2" >報紙</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="where"  value="報紙" checked><label class="member_info2" >報紙</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="where"  value="朋友連結" ><label class="member_info2" >朋友連結</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="where"  value="電視廣告" ><label class="member_info2" >電視廣告</label>
         </div>           
         <div class="member_form_text_box">
             <label class="member_form_text">網頁載入速度: &emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="speed"  value="慢死了" ><label class="member_info2" >慢死了</label>
+            <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="speed"  value="慢死了" checked><label class="member_info2" >慢死了</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="speed"  value="普通" ><label class="member_info2" >普通</label>
             <input style="height:20px; width:20px;" type="radio" class="member_info_edit_r" name="speed"  value="極速" ><label class="member_info2" >極速</label>
         </div>
