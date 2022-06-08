@@ -19,19 +19,24 @@
             String strpicture=rs.getString(3);
             String strcolor=rs.getString(7);
             String strqua=request.getParameter("buyqua");
+            String strsize=request.getParameter("size");
             String strprice=rs.getString(6);
 
-
-            sql="SELECT `pname`, `quantity` FROM `shoppingcart` WHERE `account`='"+stracct+"' AND `pname`='"+strname+"'";
+            sql="SELECT `pname`, `quantity`, `size` FROM `shoppingcart` WHERE `account`='"+stracct+"' AND `pname`='"+strname+"' AND `size`='"+strsize+"'";
             ResultSet cartrs=con.createStatement().executeQuery(sql);
+
+
             if(cartrs.next()){
                 int cartqua=Integer.parseInt(cartrs.getString(2));
                 int qua=Integer.parseInt(strqua);
                 int tolqua=cartqua+qua;
-                sql="UPDATE `shoppingcart` SET `quantity`='"+tolqua+"' WHERE `account`='"+stracct+"' AND `pname`='"+strname+"'";
+                sql="UPDATE `shoppingcart` SET `quantity`='"+tolqua+"' WHERE `account`='"+stracct+"' AND `pname`='"+strname+"' AND `size`='"+strsize+"'";
                 con.createStatement().execute(sql);
                 con.close();
-                response.sendRedirect("shoppingcar.jsp");
+                out.println("<script language='javascript'>");
+                out.println("alert('商品加入購物車成功 ! !');");
+                out.println("window.location.href='model.jsp'");
+                out.println("</script>");
             }
             else{
                 sql="INSERT shoppingcart (`account`, `pname`, `picture`, `color`, `quantity`, `price`, `size`, `total`) ";
@@ -41,7 +46,7 @@
                 sql+="'"+strcolor+"', ";
                 sql+="'"+strqua+"', ";
                 sql+="'"+strprice+"', ";
-                sql+="'26', ";
+                sql+="'"+strsize+"', ";
                 sql+="'0')";
 
                 con.createStatement().execute(sql);

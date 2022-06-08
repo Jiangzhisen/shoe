@@ -75,7 +75,7 @@
             
         </div>
     </header>
-     <%
+    <%
         String acct=String.valueOf(session.getAttribute("acct"));
         if(acct.equals("admin")){
             out.println("<nav style='width:70%; margin-left: 15%;'>");
@@ -85,13 +85,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -122,13 +122,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -246,6 +246,9 @@
                                 out.println("</p>");
                                 out.println("<form class='cont' action='delcart.jsp'>");
                                 out.println("<input type='hidden' name='prodname' value='"+rs.getString(2)+"'>");
+                                out.println("<input type='hidden' name='prodsize' value='"+rs.getString(7)+"'>");
+                                out.println("<input type='hidden' name='color' value='"+rs.getString(4)+"'>");
+                                out.println("<input type='hidden' name='picture' value='"+rs.getString(3)+"'>");
                                 out.println("<input class='dele' type='submit' value='刪除'>");
                                 out.println("</form>");
                                 out.println("</div>");

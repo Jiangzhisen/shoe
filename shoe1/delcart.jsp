@@ -12,7 +12,8 @@
             response.setCharacterEncoding("UTF-8");
             String cart_acct=String.valueOf(session.getAttribute("acct"));
             String pname=request.getParameter("prodname");
-            sql="DELETE FROM `shoppingcart` WHERE `account`='"+cart_acct+"' AND `pname`='"+pname+"'";
+            String size=request.getParameter("prodsize");
+            sql="DELETE FROM `shoppingcart` WHERE `account`='"+cart_acct+"' AND `pname`='"+pname+"' AND `size`='"+size+"'";
 
             
             con.createStatement().execute(sql);

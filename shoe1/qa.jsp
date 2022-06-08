@@ -8,13 +8,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>結帳</title>
-    <style>
-        @import url(asset/css/4.css);
-        @import url(asset/css/1.css);
-    </style>
+    <title>Q&A</title>
+    
+    <link rel="stylesheet" type="text/css" href="./asset/css/1.css" />
     <link rel="stylesheet" type="text/css" href="./asset/css/login.css" />
     <link rel="stylesheet" type="text/css" href="./asset/js/sign.js" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/qa.css" />
 </head>
 <body>
     <header>
@@ -22,8 +21,8 @@
         <div class="top">
             <div class="ss22">
                 <div class="s2ch">
-                <img class="s2ch2" src="./asset/image/2ch.png">
-            </div>
+                    <img class="s2ch2" src="./asset/image/2ch.png">
+                </div>
             
                 <form class="s22" action="search_result.jsp">
                     <input class="s222" type="text" name="s2ch" placeholder="搜一下" >
@@ -73,7 +72,7 @@
             
         </div>
     </header>
-     <%
+   <%
         String acct=String.valueOf(session.getAttribute("acct"));
         if(acct.equals("admin")){
             out.println("<nav style='width:70%; margin-left: 15%;'>");
@@ -168,7 +167,7 @@
                         <div class="tab"></div>
                         <input type="password" id="pass" placeholder="密碼" required name="pass1">
                         <div class="tab"></div>
-                        <input type="submit" value="登入" class="submit" onclick="location.href='#'" style="cursor: pointer;">
+                        <input type="submit" value="登入" class="submit" style="cursor: pointer;">
                     </form>
     
                     <h3 onclick="show2()" style="cursor: pointer;">註冊帳號</h3>
@@ -192,7 +191,7 @@
                         <div class="tab"></div>
                         <input type="password" id="pass2" placeholder="密碼" required name="pass">
                         <div class="tab"></div>
-                        <input type="password" id="cpass" placeholder=" 確認密碼" required name="cpass">
+                        <input type="text" id="cpass" placeholder=" 確認密碼" required name="cpass">
                         <div class=" tab">
                         </div>
                         <input type="submit" value="註冊" class="submit" style="cursor: pointer;">
@@ -210,63 +209,63 @@
     
 </div>
 <!--     以上為登入畫面        -->
-    <section>
-        <%
-            if(con.isClosed()){
-                out.println("建立連線失敗");
-            }
-            else{
-                if(session.getAttribute("acct") != null){
-                    request.setCharacterEncoding("UTF-8");
-                    response.setCharacterEncoding("UTF-8");
-                    String cart_acct=String.valueOf(session.getAttribute("acct"));
-                    sql="SELECT *, (`quantity` * `price`), SUM(`quantity`), SUM(`quantity` * `price`) FROM `shoppingcart` WHERE `account`='"+cart_acct+"'";
-                    ResultSet rs=con.createStatement().executeQuery(sql);
-                    rs.next();
+<section >
+    <div class="qabox">
+        <div class="titqa">Q&A</div>
+        <div class="q1">
+            ★穿鞋子一定要穿襪子嗎?
+        </div>
+        <div class="a1">
+            &nbsp;&nbsp;&nbsp; 穿不穿襪子可以取決於多個因素，而其中最重要的是衛生問題，在走路與穿鞋運動的過程中，鞋子
+            會與我們的腳產生許多的摩擦與接觸，在多個方面會讓我們的腳滋生細菌，因而產生腳臭的問題，
+            有時會導致香港腳與俗稱腳氣的問題。
+        </div><br>
+        <div class="q1">
+            ★挑選大品牌的鞋子比較好?
+        </div>
+        <div class="a1">
+            &nbsp;&nbsp;&nbsp;許多消費者都會有類似的品牌迷思，但是我們這邊要向大家說明，這個想法是100%正確的，
+            穿鞋就是要穿大品牌的鞋子才有風格，打球就是要穿球星代言的鞋子才會打得上先發，大品牌的鞋廠之所以能夠
+            打入這麼龐大的市場，必定代表他有自己的實力，當我們消費者願意付出多的那一點點錢就是我們對購買產品的責任。
+        </div>
+        <br>
+        <div class="q1">
+            ★明星為什麼要代言球鞋?
+        </div>
+        <div class="a1">
+            &nbsp;&nbsp;&nbsp;很多人一定都很好奇那些鞋店外面的巨幅廣告的功能，不僅僅是幫助球鞋打廣告，更是幫助球星提供
+            人氣，這是一項充滿商業行為的互助模式，我們習慣稱之為夢幻連動，在不知不覺的情況下，默默的讓消費者放下戒心，
+            並在腦海中刻上印象，屬實為一種絕佳的上上策，可謂技驚四座的商業思維。
+        </div><br>
+        <div class="q1">
+            ★下雨天鞋子濕了怎麼辦?
+        </div>
+        <div class="a1">
+            &nbsp;&nbsp;&nbsp;許多消費者常常遇到這類的問題，像是住在台灣北部的城市更是天天下雨，鞋子受潮確實難以避免，
+            那我們該怎麼做呢?許多傳統的想法會說可以用吹風機將潮濕的鞋子穿乾，但是在經過我們的深入研究後，我們才高八斗的
+            程序員發現，鞋子在這種狀態下會過熱，當鞋子過熱時就會與人一樣流汗，那麼原先一個受潮的鞋子在經過吹風機的熱風洗禮
+            過後結果更是慘絕人寰、不忍直視，鞋子會越吹越濕，直到鞋子不在出汗後才會回歸乾燥，而此時她也失去了鞋子本身的靈魂。
+        </div><br>
+        <div class="q1">
+            ★為什麼外出露營時小動物喜歡爬進鞋內?
+        </div>
+        <div class="a1">
+            &nbsp;&nbsp;&nbsp;對於野外的小動物來說，人類穿過的鞋子就如同一個剛熱好的暖暖包，多數的小動物視沒有一個固定的居住地點
+            在他們眼中這樣的的一個空間是非常安全的，彷彿回到媽媽溫暖的子宮中，我們也推薦各位消費者到山區進行團健時可以可以考慮將鞋子
+            收進行李袋中，如此一來即可避免小動物入侵的問題，更能夠避免踏青時踩到泥巴讓愛鞋髒掉喔!
+        </div>
 
-                    if(rs.getString(2) == null || rs.getString(2).equals("")){
-                        con.close();
-                        response.sendRedirect("model.jsp");
-                    }
-                    else{
-                        out.println("<div class='paylist'>");
-                        out.println("<div class='ppa'>結帳</div>");
-                        out.println("<div class='list'>");
-                        out.println("<form class='shopp' action='addOrder.jsp'>");
-                        out.println("<label for='' class='lab'>商品總數:&nbsp;&nbsp;"+rs.getString(10)+" <br></label>");
-                        out.println("<label for='' class='lab'>總價錢:&nbsp;&nbsp;&nbsp;$ "+rs.getString(11)+"<br></label>");
-                        out.println("<label for='' class='lab'>訂購位址:<input type='text' class='place' name='address' required><br></label>");
-                        out.println("<label for='' class='lab'>取貨方式:   </label>");
-                        out.println("<select size='1' class='paywhere' name='method'>");
-                        out.println("<option>7-11</option>");
-                        out.println("<option>全家</option>");
-                        out.println("<option>宅配</option>");
-                        out.println("</select></br>");
-                        out.println("<label for='' class='lab'>備註：</label><br>");
-                        out.println("<textarea cols='40' rows='5' wrap='hard' class='ssay' name='remark'></textarea><br>");
-                        out.println("<input type='submit' value='確認訂單' class='senta1'>");
-                        out.println("</form>");
-                        out.println("</div>");
-                        out.println("</div>");
+    </div>
 
-                        con.close();
-                    }
-                }
-                else{
-                    con.close();
-                    out.println("<script language='javascript'>");
-                    out.println("alert('您尚未登入 ! !');");
-                    out.println("window.location.href='index.jsp'");
-                    out.println("</script>");
-                }
-            }
-        %>
-    </section>
-    <footer>
-        <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
-            沒有版權 愛怎麼抄就怎麼抄
-        </p>
-    </footer>
-    <script src="./asset/js/sign.js"></script>
+</section>
+
+<footer>
+    <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
+        沒有版權 愛怎麼抄就怎麼抄
+    </p>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./asset/js/sign.js">
+</script>
 </body>
 </html>

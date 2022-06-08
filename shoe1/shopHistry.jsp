@@ -85,13 +85,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -122,13 +122,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -149,6 +149,7 @@
             out.println("</nav> ");
         }
     %>
+
     <!--     以上為HEADER        -->
 
 <div  id="login_box1" class="login_box">
@@ -218,17 +219,17 @@
     else{
         if(session.getAttribute("acct") != null){
             acct=String.valueOf(session.getAttribute("acct"));
-            sql="SELECT `account`, `Putdate`, `method`, `remark` FROM `order_record` WHERE `account`='"+acct+"' GROUP BY `Putdate` ORDER BY `Putdate` DESC";
+            sql="SELECT `account`, `size`, `Putdate`, `method`, `remark` FROM `order_record` WHERE `account`='"+acct+"' GROUP BY `Putdate` ORDER BY `Putdate` DESC";
             ResultSet rs=con.createStatement().executeQuery(sql);
 
-            sql="SELECT `account`, `Putdate`, `method`, `remark` FROM `order_record` WHERE `account`='"+acct+"' GROUP BY `Putdate` ORDER BY `Putdate` DESC";
+            sql="SELECT `account`, `size`, `Putdate`, `method`, `remark` FROM `order_record` WHERE `account`='"+acct+"' GROUP BY `Putdate` ORDER BY `Putdate` DESC";
             ResultSet rrs=con.createStatement().executeQuery(sql);
 
 
             if(rrs.next()){
                 while(rs.next()){
                     out.println("<div class='member_box_h' >");
-                    String Putdate=rs.getString(2);
+                    String Putdate=rs.getString(3);
                     sql="SELECT * FROM `order_record` WHERE `account`='"+acct+"' AND `Putdate`='"+Putdate+"'";
                     ResultSet ors=con.createStatement().executeQuery(sql);
 
@@ -236,9 +237,10 @@
                     ResultSet tolrs=con.createStatement().executeQuery(sql);
                     tolrs.next();
                     String amount=tolrs.getString(1);
-                    String buytime=rs.getString(2);
-                    String method=rs.getString(3);
-                    String remark=rs.getString(4);
+                    String buytime=rs.getString(3);
+                    String method=rs.getString(4);
+                    String remark=rs.getString(5);
+                    
 
 
                     out.println("<div class='member_histry_box' >");
@@ -247,14 +249,11 @@
 
                     while(ors.next()){
                         String pname=ors.getString(4);
-                        String quantity=ors.getString(5);
-                        String price=ors.getString(6);
-                        sql="SELECT * FROM `product` WHERE `pname`='"+pname+"'";
-                        ResultSet prors=con.createStatement().executeQuery(sql);
-                        prors.next();
-                        String picture=prors.getString(3);
-                        String color=prors.getString(7);
-                        String size=prors.getString(9);
+                        String quantity=ors.getString(8);
+                        String price=ors.getString(9);
+                        String size=ors.getString(7);
+                        String color=ors.getString(6);
+                        String picture=ors.getString(5);
 
                         out.println("<div class='carbox1'>");
                         out.println("<div class='shoepic'>");

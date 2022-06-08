@@ -85,13 +85,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -122,13 +122,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -149,6 +149,7 @@
             out.println("</nav> ");
         }
     %>
+
     <!--     以上為HEADER        -->
 
 <div  id="login_box1" class="login_box">
@@ -221,6 +222,7 @@
                             <td>編號</td>
                             <td>姓名</td>
                             <td>產品名稱</td>
+                            <td>尺寸</td>
                             <td>總數量</td>
                             <td>總價錢</td>
                             <td>送貨地址</td>
@@ -236,12 +238,13 @@
                                 out.println("<td>"+rs.getString(1)+"</td>");
                                 out.println("<td>"+rs.getString(3)+"</td>");
                                 out.println("<td>"+rs.getString(4)+"</td>");
-                                out.println("<td>"+rs.getString(5)+"</td>");
-                                out.println("<td>"+rs.getString(6)+"</td>");
                                 out.println("<td>"+rs.getString(7)+"</td>");
                                 out.println("<td>"+rs.getString(8)+"</td>");
                                 out.println("<td>"+rs.getString(9)+"</td>");
                                 out.println("<td>"+rs.getString(10)+"</td>");
+                                out.println("<td>"+rs.getString(11)+"</td>");
+                                out.println("<td>"+rs.getString(12)+"</td>");
+                                out.println("<td>"+rs.getString(13)+"</td>");
                                 out.println("</tr>");
                             }
 

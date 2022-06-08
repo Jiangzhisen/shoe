@@ -74,7 +74,7 @@
             
         </div>
     </header>
-    <%
+  <%
         String acct=String.valueOf(session.getAttribute("acct"));
         if(acct.equals("admin")){
             out.println("<nav style='width:70%; margin-left: 15%;'>");
@@ -84,13 +84,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -121,13 +121,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -148,6 +148,7 @@
             out.println("</nav> ");
         }
     %>
+
     <!--     以上為HEADER        -->
 
 <div  id="login_box1" class="login_box">
@@ -211,9 +212,9 @@
 </div>
 <!--     以上為登入畫面        -->
     
-        <div class="QAZ" style="height:2900px; ">
+        <div class="QAZ" style="height:3400px;">
             <div class="lp">
-                <div class="cont1">
+                <div class="cont1" style="height: 1100px;">
         
                     <div class="login">
         
@@ -231,7 +232,13 @@
                                 <option>休閒鞋</option>
                             </select>
                             <div class="tab"></div>
-                            請輸入商品尺寸   <input type="text" class="pass" required name="size">
+                            請輸入商品尺寸1   <input type="text" class="pass" required name="size1">
+                            <div class="tab"></div>
+                            請輸入商品尺寸2   <input type="text" class="pass" required name="size2">
+                            <div class="tab"></div>
+                            請輸入商品尺寸3   <input type="text" class="pass" required name="size3">
+                            <div class="tab"></div>
+                            請輸入商品尺寸4   <input type="text" class="pass" required name="size4">
                             <div class="tab"></div>
                             請輸入商品介紹   <input type="text" class="pass" required name="intro">
                             <div class="tab"></div>
@@ -239,7 +246,7 @@
                             <div class="tab"></div>
                             請輸入商品庫存   <input type="text" class="pass" required name="quantity">
                             <div class="tab"></div>
-                            請輸入圖片路徑   <input type="text" class="pass" required name="picture">
+                            請輸入圖片名稱   <input type="text" class="pass" required name="picture">
                             <div class="tab"></div>
                             <br>
                             <input type="submit" value="送出" class="submit" style="cursor: pointer;">
@@ -247,7 +254,7 @@
                     </div>
                 </div>
 
-                <div class="cont1">
+                <div class="cont1" style="height: 1100px;">
         
                     <div class="login">
         
@@ -265,7 +272,13 @@
                                 <option>休閒鞋</option>
                             </select>
                             <div class="tab"></div>
-                            請輸入商品尺寸   <input type="text" class="pass" required name="size">
+                            請輸入商品尺寸1   <input type="text" class="pass" required name="size1">
+                            <div class="tab"></div>
+                            請輸入商品尺寸2   <input type="text" class="pass" required name="size2">
+                            <div class="tab"></div>
+                            請輸入商品尺寸3   <input type="text" class="pass" required name="size3">
+                            <div class="tab"></div>
+                            請輸入商品尺寸4   <input type="text" class="pass" required name="size4">
                             <div class="tab"></div>
                             請輸入商品介紹   <input type="text" class="pass" required name="intro">
                             <div class="tab"></div>
@@ -273,7 +286,7 @@
                             <div class="tab"></div>
                             請輸入商品庫存   <input type="text" class="pass" required name="quantity">
                             <div class="tab"></div>
-                            請輸入圖片路徑   <input type="text" class="pass" required name="picture">
+                            請輸入圖片名稱   <input type="text" class="pass" required name="picture">
                             <div class="tab"></div>
                             <br>
                             <input type="submit" value="送出" class="submit" style="cursor: pointer;">

@@ -8,13 +8,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>結帳</title>
-    <style>
-        @import url(asset/css/4.css);
-        @import url(asset/css/1.css);
-    </style>
+    <title>小知識</title>
+    
+    <link rel="stylesheet" type="text/css" href="./asset/css/1.css" />
     <link rel="stylesheet" type="text/css" href="./asset/css/login.css" />
     <link rel="stylesheet" type="text/css" href="./asset/js/sign.js" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/ab.css" />
 </head>
 <body>
     <header>
@@ -22,8 +21,8 @@
         <div class="top">
             <div class="ss22">
                 <div class="s2ch">
-                <img class="s2ch2" src="./asset/image/2ch.png">
-            </div>
+                    <img class="s2ch2" src="./asset/image/2ch.png">
+                </div>
             
                 <form class="s22" action="search_result.jsp">
                     <input class="s222" type="text" name="s2ch" placeholder="搜一下" >
@@ -73,7 +72,7 @@
             
         </div>
     </header>
-     <%
+    <%
         String acct=String.valueOf(session.getAttribute("acct"));
         if(acct.equals("admin")){
             out.println("<nav style='width:70%; margin-left: 15%;'>");
@@ -168,7 +167,7 @@
                         <div class="tab"></div>
                         <input type="password" id="pass" placeholder="密碼" required name="pass1">
                         <div class="tab"></div>
-                        <input type="submit" value="登入" class="submit" onclick="location.href='#'" style="cursor: pointer;">
+                        <input type="submit" value="登入" class="submit" style="cursor: pointer;">
                     </form>
     
                     <h3 onclick="show2()" style="cursor: pointer;">註冊帳號</h3>
@@ -192,7 +191,7 @@
                         <div class="tab"></div>
                         <input type="password" id="pass2" placeholder="密碼" required name="pass">
                         <div class="tab"></div>
-                        <input type="password" id="cpass" placeholder=" 確認密碼" required name="cpass">
+                        <input type="text" id="cpass" placeholder=" 確認密碼" required name="cpass">
                         <div class=" tab">
                         </div>
                         <input type="submit" value="註冊" class="submit" style="cursor: pointer;">
@@ -210,63 +209,48 @@
     
 </div>
 <!--     以上為登入畫面        -->
-    <section>
-        <%
-            if(con.isClosed()){
-                out.println("建立連線失敗");
-            }
-            else{
-                if(session.getAttribute("acct") != null){
-                    request.setCharacterEncoding("UTF-8");
-                    response.setCharacterEncoding("UTF-8");
-                    String cart_acct=String.valueOf(session.getAttribute("acct"));
-                    sql="SELECT *, (`quantity` * `price`), SUM(`quantity`), SUM(`quantity` * `price`) FROM `shoppingcart` WHERE `account`='"+cart_acct+"'";
-                    ResultSet rs=con.createStatement().executeQuery(sql);
-                    rs.next();
-
-                    if(rs.getString(2) == null || rs.getString(2).equals("")){
-                        con.close();
-                        response.sendRedirect("model.jsp");
-                    }
-                    else{
-                        out.println("<div class='paylist'>");
-                        out.println("<div class='ppa'>結帳</div>");
-                        out.println("<div class='list'>");
-                        out.println("<form class='shopp' action='addOrder.jsp'>");
-                        out.println("<label for='' class='lab'>商品總數:&nbsp;&nbsp;"+rs.getString(10)+" <br></label>");
-                        out.println("<label for='' class='lab'>總價錢:&nbsp;&nbsp;&nbsp;$ "+rs.getString(11)+"<br></label>");
-                        out.println("<label for='' class='lab'>訂購位址:<input type='text' class='place' name='address' required><br></label>");
-                        out.println("<label for='' class='lab'>取貨方式:   </label>");
-                        out.println("<select size='1' class='paywhere' name='method'>");
-                        out.println("<option>7-11</option>");
-                        out.println("<option>全家</option>");
-                        out.println("<option>宅配</option>");
-                        out.println("</select></br>");
-                        out.println("<label for='' class='lab'>備註：</label><br>");
-                        out.println("<textarea cols='40' rows='5' wrap='hard' class='ssay' name='remark'></textarea><br>");
-                        out.println("<input type='submit' value='確認訂單' class='senta1'>");
-                        out.println("</form>");
-                        out.println("</div>");
-                        out.println("</div>");
-
-                        con.close();
-                    }
-                }
-                else{
-                    con.close();
-                    out.println("<script language='javascript'>");
-                    out.println("alert('您尚未登入 ! !');");
-                    out.println("window.location.href='index.jsp'");
-                    out.println("</script>");
-                }
-            }
-        %>
-    </section>
-    <footer>
-        <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
-            沒有版權 愛怎麼抄就怎麼抄
+<section>
+    <div class="abbox">
+        <img class="pic1" src="./asset/image/g1.png">
+        <img class="pic5" src="./asset/image/g6.png">
+        <p class="p1">
+            &nbsp;&nbsp;&nbsp; 天天踩在腳底、幫你遮風擋雨、陪你上山下海的鞋子，好像理所當然地就在那裡。
+            在家穿拖鞋、上班穿皮鞋、跑步穿跑鞋...你有多少種鞋？每一種鞋總是在你需要時出現。<br>
         </p>
-    </footer>
-    <script src="./asset/js/sign.js"></script>
+        <img class="pic3" src="./asset/image/g3.png">
+        <p class="p2">
+            毎日足の裏を踏み、風雨を防ぎ、山や海に同行する靴は当たり前のようです。
+        自宅のスリッパ、仕事用の革靴、ランニング用のランニングシューズ…何種類の靴がありますか？あなたがそれを必要とするとき、すべての靴は常にそこにあります。
+        </p>
+        
+        <img class="pic2" src="./asset/image/g2.png">
+        <p class="p3">
+            &nbsp;&nbsp;&nbsp;320萬年前，鞋子還沒有被發明出來，但人類的祖先南方古猿已經能光腳直立行走，在這樣的行為上已經比起猿類更接近人類。<br>
+        </p><p class="p3">
+            &nbsp;&nbsp;&nbsp;目前已知到最早的鞋子是4.2萬年前，在中國田園洞遺址生活的田園洞人所穿，使用獸皮和樹葉縫製而成，純粹為了保護腳部。<br>
+        </p><p class="p3">
+            &nbsp;&nbsp;&nbsp;到了17世紀—男芭蕾舞者所穿的是高跟有扣的芭蕾鞋，以法王路易十四的鞋子為樣本製造。<br>
+        </p><p class="p3">
+            &nbsp;&nbsp;&nbsp;1897年—德國製鞋師Konrad Birkenstock發明了第一雙有鞋墊構造的鞋款，而穿白襪配博肯鞋是到1980年後才開始流行的。<br>
+        </p><p class="p3">
+            &nbsp;&nbsp;&nbsp;而到了1917年首先大規模銷售帆布鞋面的球鞋，也就是sneakers。是因為一位19世紀的倫敦警察為了可以安靜地逮補犯人所發明的，因為穿了膠底的鞋走路都沒有聲音。<br>
+        </p><p class="p3">    &nbsp;&nbsp;&nbsp;隨著第一次世界大戰的到來，戰爭帶給全世界的產業極大的影響。戰爭改變工廠的運營模式，婦女在工廠裡的位置取代了男人。鞋也在此時隨之改變了。當時最流行的是高靴和靴子。這種傳統現在由青少年幸福地繼續 - 軍靴被認為是青年時尚的代表。<br>
+        </p>
+        <img class="pic4" src="./asset/image/g4.png">
+    </div>
+
+</section>
+
+
+
+
+<footer>
+    <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
+        沒有版權 愛怎麼抄就怎麼抄
+    </p>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./asset/js/sign.js">
+</script>
 </body>
 </html>

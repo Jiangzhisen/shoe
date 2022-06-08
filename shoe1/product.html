@@ -8,6 +8,38 @@
     <style>
         @import "asset/css/1.css";
         @import "asset/css/2.css";
+
+        .but label{
+            float: left;
+            width: 150px;
+            outline: none; 
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 5px #999;
+            font-size: 25px;
+            background-color: #d9b981;
+            text-align: center;
+        }
+
+        .but label:hover{
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 25px;
+            box-shadow: 0;
+            color: #fff;
+            background-color: black;
+        }
+
+        #size1,
+        #size2,
+        #size3,
+        #size4 {
+            display: none;
+        }
+        
+
     </style>
         <link rel="stylesheet" type="text/css" href="./asset/css/login.css" />
         <link rel="stylesheet" type="text/css" href="./asset/js/sign.js" />
@@ -155,21 +187,25 @@
                 <b>價錢: </b>$ 1539<br>
                 <b>尺碼: </b><br>
                 </p>
-            <div class="but">
-                <li>
-                    <button><b>25</b></button>
-                </li>
-                <li>
-                    <button><b>26</b></button>
-                </li>
-                <li>
-                    <button><b>27</b></button>
-                </li>
-                <li>
-                    <button><b>28</b></button>
-                </li>
-            </div>
             <form class="shopp">
+                <div class="but">
+                    <li>
+                        <label class="size1" for="size1" onclick="colorchange1()"><b>25</b></label>
+                        <input type="radio" id="size1" name="size" value="25">
+                    </li>
+                    <li>
+                        <label class="size2" for="size2" onclick="colorchange2()"><b>26</b></label>
+                        <input type="radio" id="size2" name="size" value="26">
+                    </li>
+                    <li>
+                        <label class="size3" for="size3" onclick="colorchange3()"><b>27</b></label>
+                        <input type="radio" id="size3" name="size" value="27">
+                    </li>
+                    <li>
+                        <label class="size4" for="size4" onclick="colorchange4()"><b>28</b></label>
+                        <input type="radio" id="size4" name="size" value="28">
+                    </li>
+                </div>
                 <label class="lab">訂購數量:</label>
                 <input type="number" min="1" class="gogo1">
                 <input type="submit" value="加入購物車" class="gogo">
@@ -225,6 +261,184 @@
             沒有版權 愛怎麼抄就怎麼抄
         </p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./asset/js/sign.js"></script>
+    <script>
+        function colorchange1(){
+            $('.size1').css('border','none');
+            $('.size1').css('border-radius','none');
+            $('.size1').css('font-size','25px');
+            $('.size1').css('box-shadow','0');
+            $('.size1').css('color','#fff');
+            $('.size1').css('background-color','black');
+
+            $('.size2').css('width','150px');
+            $('.size2').css('outline','none');
+            $('.size2').css('border','pointer');
+            $('.size2').css('cursor','0');
+            $('.size2').css('border-radius','10px');
+            $('.size2').css('box-shadow','0 5px #999');
+            $('.size2').css('font-size','25px');
+            $('.size2').css('background-color','#d9b981');
+            $('.size2').css('color','black');
+            $('.size2').css('text-align','center');
+
+            $('.size3').css('width','150px');
+            $('.size3').css('outline','none');
+            $('.size3').css('border','pointer');
+            $('.size3').css('cursor','0');
+            $('.size3').css('border-radius','10px');
+            $('.size3').css('box-shadow','0 5px #999');
+            $('.size3').css('font-size','25px');
+            $('.size3').css('background-color','#d9b981');
+            $('.size3').css('color','black');
+            $('.size3').css('text-align','center');
+
+            $('.size4').css('width','150px');
+            $('.size4').css('outline','none');
+            $('.size4').css('border','pointer');
+            $('.size4').css('cursor','0');
+            $('.size4').css('border-radius','10px');
+            $('.size4').css('box-shadow','0 5px #999');
+            $('.size4').css('font-size','25px');
+            $('.size4').css('background-color','#d9b981');
+            $('.size4').css('color','black');
+            $('.size4').css('text-align','center');
+        }
+
+
+        function colorchange2(){
+            $('.size1').css('width','150px');
+            $('.size1').css('outline','none');
+            $('.size1').css('border','pointer');
+            $('.size1').css('cursor','0');
+            $('.size1').css('border-radius','10px');
+            $('.size1').css('box-shadow','0 5px #999');
+            $('.size1').css('font-size','25px');
+            $('.size1').css('background-color','#d9b981');
+            $('.size1').css('color','black');
+            $('.size1').css('text-align','center');
+
+
+            $('.size2').css('border','none');
+            $('.size2').css('border-radius','none');
+            $('.size2').css('font-size','25px');
+            $('.size2').css('box-shadow','0');
+            $('.size2').css('color','#fff');
+            $('.size2').css('background-color','black');
+
+
+            $('.size3').css('width','150px');
+            $('.size3').css('outline','none');
+            $('.size3').css('border','pointer');
+            $('.size3').css('cursor','0');
+            $('.size3').css('border-radius','10px');
+            $('.size3').css('box-shadow','0 5px #999');
+            $('.size3').css('font-size','25px');
+            $('.size3').css('background-color','#d9b981');
+            $('.size3').css('color','black');
+            $('.size3').css('text-align','center');
+
+            $('.size4').css('width','150px');
+            $('.size4').css('outline','none');
+            $('.size4').css('border','pointer');
+            $('.size4').css('cursor','0');
+            $('.size4').css('border-radius','10px');
+            $('.size4').css('box-shadow','0 5px #999');
+            $('.size4').css('font-size','25px');
+            $('.size4').css('background-color','#d9b981');
+            $('.size4').css('color','black');
+            $('.size4').css('text-align','center');
+
+        }
+        function colorchange3(){
+            $('.size1').css('width','150px');
+            $('.size1').css('outline','none');
+            $('.size1').css('border','pointer');
+            $('.size1').css('cursor','0');
+            $('.size1').css('border-radius','10px');
+            $('.size1').css('box-shadow','0 5px #999');
+            $('.size1').css('font-size','25px');
+            $('.size1').css('background-color','#d9b981');
+            $('.size1').css('color','black');
+            $('.size1').css('text-align','center');
+
+
+            
+            $('.size2').css('width','150px');
+            $('.size2').css('outline','none');
+            $('.size2').css('border','pointer');
+            $('.size2').css('cursor','0');
+            $('.size2').css('border-radius','10px');
+            $('.size2').css('box-shadow','0 5px #999');
+            $('.size2').css('font-size','25px');
+            $('.size2').css('background-color','#d9b981');
+            $('.size2').css('color','black');
+            $('.size2').css('text-align','center');
+
+
+            $('.size3').css('border','none');
+            $('.size3').css('border-radius','none');
+            $('.size3').css('font-size','25px');
+            $('.size3').css('box-shadow','0');
+            $('.size3').css('color','#fff');
+            $('.size3').css('background-color','black');
+
+            $('.size4').css('width','150px');
+            $('.size4').css('outline','none');
+            $('.size4').css('border','pointer');
+            $('.size4').css('cursor','0');
+            $('.size4').css('border-radius','10px');
+            $('.size4').css('box-shadow','0 5px #999');
+            $('.size4').css('font-size','25px');
+            $('.size4').css('background-color','#d9b981');
+            $('.size4').css('color','black');
+            $('.size4').css('text-align','center');
+
+        }
+        function colorchange4(){
+            $('.size1').css('width','150px');
+            $('.size1').css('outline','none');
+            $('.size1').css('border','pointer');
+            $('.size1').css('cursor','0');
+            $('.size1').css('border-radius','10px');
+            $('.size1').css('box-shadow','0 5px #999');
+            $('.size1').css('font-size','25px');
+            $('.size1').css('background-color','#d9b981');
+            $('.size1').css('color','black');
+            $('.size1').css('text-align','center');
+
+            $('.size2').css('width','150px');
+            $('.size2').css('outline','none');
+            $('.size2').css('border','pointer');
+            $('.size2').css('cursor','0');
+            $('.size2').css('border-radius','10px');
+            $('.size2').css('box-shadow','0 5px #999');
+            $('.size2').css('font-size','25px');
+            $('.size2').css('background-color','#d9b981');
+            $('.size2').css('color','black');
+            $('.size2').css('text-align','center');
+
+
+            $('.size3').css('width','150px');
+            $('.size3').css('outline','none');
+            $('.size3').css('border','pointer');
+            $('.size3').css('cursor','0');
+            $('.size3').css('border-radius','10px');
+            $('.size3').css('box-shadow','0 5px #999');
+            $('.size3').css('font-size','25px');
+            $('.size3').css('background-color','#d9b981');
+            $('.size3').css('color','black');
+            $('.size3').css('text-align','center');
+
+
+            $('.size4').css('border','none');
+            $('.size4').css('border-radius','none');
+            $('.size4').css('font-size','25px');
+            $('.size4').css('box-shadow','0');
+            $('.size4').css('color','#fff');
+            $('.size4').css('background-color','black');
+        }
+    </script>
 </body>
 </html>

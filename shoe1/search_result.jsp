@@ -73,7 +73,7 @@
             
         </div>
     </header>
-     <%
+    <%
         String acct=String.valueOf(session.getAttribute("acct"));
         if(acct.equals("admin")){
             out.println("<nav style='width:70%; margin-left: 15%;'>");
@@ -83,13 +83,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -120,13 +120,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -218,36 +218,46 @@
         }
         else{
             String s2ch=request.getParameter("s2ch");
-            sql="SELECT * FROM `product` WHERE `pname` LIKE '%"+s2ch+"%'";
-            ResultSet rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
-            out.println("<div class='cls'>");
-            out.println("<div id='skater'>");
-            out.println("<div class='vertical-rotate-cell'>");
-            out.println("<div class='vertical-rotate-container grid-central'>");
-            out.println("<div class='vertical-rotate-front text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>搜尋結果</span>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-central'>");
-            out.println("</div>");
-            out.println("<div class='vertical-rotate-behind text-container grid-central'>");
-            out.println("<span class='vertical-rotate-text'>SEARCH RESULTS</span>");
-            out.println("</div>");
-            out.println("</div>");
-            out.println("</div><br>");
-            out.println("</div>");
-            out.println("<br><br><br>");
-            while(rs.next()){
-                out.println("<div class='shoe1'>");
-                out.println("<form method='post' action='product.jsp'>");
-                out.println("<input type='image' class='picture' src='"+rs.getString(3)+"'>");
-                out.println("<p class='shoename'><div class=''>"+rs.getString(2)+"</div></p>");
-                out.println("<input type='hidden' name='shoe' value='"+rs.getString(1)+"'>");
-                out.println("</form>");
-                out.println("</div>");
+            if(s2ch == null || s2ch.equals("")){
+                out.println("<script language='javascript'>");
+                out.println("alert('請填寫關鍵字 ! !');");
+                out.println("window.location.href='index.jsp'");
+                out.println("</script>");
+                con.close();
             }
-            out.println("</div>");
+            else{
+                sql="SELECT * FROM `product` WHERE `pname` LIKE '%"+s2ch+"%'";
+                ResultSet rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
+                out.println("<div class='cls'>");
+                out.println("<div id='skater'>");
+                out.println("<div class='vertical-rotate-cell'>");
+                out.println("<div class='vertical-rotate-container grid-central'>");
+                out.println("<div class='vertical-rotate-front text-container grid-central'>");
+                out.println("<span class='vertical-rotate-text'>搜尋結果</span>");
+                out.println("</div>");
+                out.println("<div class='vertical-rotate-central'>");
+                out.println("</div>");
+                out.println("<div class='vertical-rotate-behind text-container grid-central'>");
+                out.println("<span class='vertical-rotate-text'>SEARCH RESULTS</span>");
+                out.println("</div>");
+                out.println("</div>");
+                out.println("</div><br>");
+                out.println("</div>");
+                out.println("<br><br><br>");
+                while(rs.next()){
+                    out.println("<div class='shoe1'>");
+                    out.println("<form method='post' action='product.jsp'>");
+                    out.println("<input type='image' class='picture' src='"+rs.getString(3)+"'>");
+                    out.println("<p class='shoename'><div class=''>"+rs.getString(2)+"</div></p>");
+                    out.println("<input type='hidden' name='shoe' value='"+rs.getString(1)+"'>");
+                    out.println("</form>");
+                    out.println("</div>");
+                }
+                out.println("</div>");
 
-            con.close();
+                con.close();
+            }
+            
         }
         %>
         <br><br><br><br><br><br><br><br><br>

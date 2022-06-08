@@ -32,11 +32,17 @@
                 String prodname=cartrs.getString(2);
                 String qua=cartrs.getString(5);
                 String tolpri=cartrs.getString(9);
+                String size=cartrs.getString(7);
+                String color=cartrs.getString(4);
+                String picture=cartrs.getString(3);
 
-                sql="INSERT order_record (`account`, `name`, `pname`, `tolqua`, `tolpri`, `address`, `method`, `remark`, `Putdate`)";
+                sql="INSERT order_record (`account`, `name`, `pname`, `picture`, `color`, `size`, `tolqua`, `tolpri`, `address`, `method`, `remark`, `Putdate`)";
                 sql+="VALUES ('"+cart_acct+"', ";
                 sql+="'"+name+"', ";
                 sql+="'"+prodname+"', ";
+                sql+="'"+picture+"', ";
+                sql+="'"+color+"', ";
+                sql+="'"+size+"', ";
                 sql+="'"+qua+"', ";
                 sql+="'"+tolpri+"', ";
                 sql+="'"+address+"', ";

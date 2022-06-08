@@ -8,9 +8,313 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>靴を買う</title>
-    <link rel="stylesheet" type="text/css" href="./asset/css/index_css.css" />
+    <title>index</title>
+    <style>
+    .shoe1{
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 5%;
+    padding: 25px;
+    vertical-align: top;
+    text-align: center;
+    height: 400px;
+    line-height: 30px;
+    background-image: url(asset/image/b2.jpg);
+    border-radius: 20px;
+}
+.picture{
+    width: 350px;
+    border-radius: 15px;
+}
+.hihi{
+    margin-top: 2%;
+}
+.banner1{
+    height: 730px;
+    width: 100%;
+    background-image: url(asset/image/banner12.jpg);
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+}
+.banner2{
+    height: 730px;
+    background-image: url(asset/image/banner.jpg);
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    transition: ease-in 1s;
+}
+.banner2:hover{
+    opacity: 0;
+}
+.chose{
+    margin-left: 10%  ;
+    margin-top: 2%;
+    width: 80%;
+    columns:2 ;
+}
+
+
+.chose_right{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    padding: 15px;
+    width: 20%;
+    height:500px;
+    vertical-align: top;
+    text-align: center;
     
+    line-height: 30px;
+    background-image: url(asset/image/b1.jpg);
+    border-radius: 20px;
+   
+}
+.top_title_box22{
+    height: 600px;
+    width: 100%;
+    background-image: url(asset/image/banner13.jpg);
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+}
+.top_title_box{
+    height: 600px;
+    background-image: url(asset/image/pexels-web-donut-19090.jpg);
+    background-size: cover;
+    position: relative;
+    z-index: 99;
+    transition: ease-in 1s;
+}
+.top_title_box:hover{
+    opacity: 0;
+    transition: 0.75s;
+}
+
+.top_title{
+    margin-top: 4%;
+    text-align: center;
+    font-family: "秀風體W3";
+    text-align: center;
+    color:#666;
+    position: absolute;
+    z-index: 100;
+    font-size: 200px;
+    font-weight: 100;
+    -webkit-text-stroke: 1px white;
+   transform: translate(68%,-450px);
+}
+.top_title_box2{
+    height: 600px;
+    width: 100%;
+    background-image: url(asset/image/top2.jpg);
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+}
+.top_title2{
+    margin-top: 4%;
+    text-align: center;
+    font-family: "秀風體W3";
+    text-align: center;
+    color:#7a6944;
+    position: absolute;
+    z-index: 100;
+    font-size: 200px;
+    font-weight: 500;
+    -webkit-text-stroke: 1px white;
+    transform: translate(68%,-450px);
+}
+.top_title_box4{
+    height: 600px;
+    width: 100%;
+    background-image: url(asset/image/top.jpg);
+    background-size: cover;
+    position: relative;
+    z-index: 99;
+    transition: ease-in 1s;
+}
+.top_title_box4:hover{
+    opacity: 0;
+    transition: 0.75s;
+}
+.hot_box{
+    margin-bottom: 20%;
+    padding: 20px;
+    height: auto;
+    border-radius: 20px;
+    border-color: grey;
+    border-width: 1px;
+}
+.hot_shoe{
+    
+    outline: 0px;
+    position: relative;
+    display: inline-block;
+    width: 19%;
+    margin-left: 3%;
+    margin-top: 10px;
+    padding: 1%;
+    vertical-align: top;
+    text-align: center;
+    height:auto;
+    background-image: url(asset/image/b4.jpg);
+    border-radius: 20px;
+}
+.hot_picture{
+    
+    width: 95%;
+    border-radius: 15px;
+    border:0px;
+}
+
+
+
+
+.chose_left{ 
+    position: absolute;
+    display: inline-block;
+    top:20px;
+    left: 0px;
+    cursor: default;
+    margin-left: 0%;
+    margin-top: 0%;
+    width: 100%;
+    height:740px;
+    background-image: url(/asset/image/b2.jpg);
+    border-radius: 20px;
+    border: 0px;
+    outline: 0px;
+    outline: transparent;
+    padding: 0;
+    
+}
+
+
+.slider_box{
+    cursor: default;
+    margin-left: 15%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    display: inline-block;
+    width: 800px;
+    height:800px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+    background-image: url(asset/image/b2.jpg);
+    background-size: cover;
+    border-radius: 20px;
+}
+.slider_box div{
+    left: 19px;
+    padding: 0;
+    position: relative;
+    display: block;
+    width: 760px;
+    height: 100%;
+    overflow: hidden;
+}
+.slider_box div div{
+    display: block;
+    padding: 0;
+    position: absolute;
+
+    top: 10;
+    left: -100%;;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    
+    -webkit-animation: repeat 25s linear infinite;
+            animation:  repeat 25s linear infinite;
+}
+
+@-webkit-keyframes repeat {
+    0%{
+        opacity: 1;
+    }
+    4% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        left: 0%;
+    }
+    20% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        left: 0%;
+    }
+    24% {
+        opacity:1;
+        filter: alpha(opacity=0);
+        left: 100%;
+    }
+    26%{
+        opacity:0;
+        filter: alpha(opacity=0);
+        left: 100%;
+    }
+    28%{
+        opacity:0;
+        filter: alpha(opacity=0);
+        left: -100%;
+    }
+}
+@keyframes repeat {
+    0%{
+        opacity: 1;
+    }
+    4% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        left: 0%;
+    }
+    20% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        left: 0%;
+    }
+    24% {
+        opacity:1;
+        filter: alpha(opacity=0);
+        left: 100%;
+    }
+    26%{
+        opacity:0;
+        filter: alpha(opacity=0);
+        left: 100%;
+    }
+    28%{
+        opacity:0;
+        filter: alpha(opacity=0);
+        left: -100%;
+    }
+}
+.slider_box div div:nth-child(1) {
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+}
+.slider_box div div:nth-child(2) {
+    -webkit-animation-delay: 5s;
+            animation-delay: 5s;
+}
+.slider_box div div:nth-child(3) {
+    -webkit-animation-delay: 10s;
+            animation-delay: 10s;
+}
+.slider_box div div:nth-child(4) {
+    -webkit-animation-delay: 15s;
+            animation-delay: 15s;
+}
+.slider_box div div:nth-child(5) {
+    -webkit-animation-delay: 20s;
+            animation-delay: 20s;
+}
+
+
+    </style>
     <link rel="stylesheet" type="text/css" href="./asset/css/3.css" />
     <link rel="stylesheet" type="text/css" href="./asset/css/1.css" />
     <link rel="stylesheet" type="text/css" href="./asset/css/login.css" />
@@ -24,7 +328,6 @@
                 <div class="s2ch">
                 <img class="s2ch2" src="./asset/image/2ch.png">
             </div>
-            
                 <form class="s22" action="search_result.jsp">
                     <input class="s222" type="text" name="s2ch" placeholder="搜一下" >
                 </form>
@@ -33,7 +336,7 @@
             <div class="man1">
                 <img class="log1" src="./asset/image/man2.png">
             </div>
-            <%
+             <%
                 if(session.getAttribute("acct") != null){
                     out.println("<form class='out' action='logout.jsp'>");
                     out.println("<input  type=image class='out_input' name=sa src='asset/image/logout.png' >");
@@ -73,7 +376,7 @@
             
         </div>
     </header>
-     <%
+    <%
         String acct=String.valueOf(session.getAttribute("acct"));
         if(acct.equals("admin")){
             out.println("<nav style='width:70%; margin-left: 15%;'>");
@@ -83,13 +386,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -120,13 +423,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -147,6 +450,7 @@
             out.println("</nav> ");
         }
     %>
+
 
     <!--     以上為HEADER        -->
 
@@ -192,7 +496,7 @@
                         <div class="tab"></div>
                         <input type="password" id="pass2" placeholder="密碼" required name="pass">
                         <div class="tab"></div>
-                        <input type="password" id="cpass" placeholder=" 確認密碼" required name="cpass">
+                        <input type="text" id="cpass" placeholder=" 確認密碼" required name="cpass" name="name4">
                         <div class=" tab">
                         </div>
                         <input type="submit" value="註冊" class="submit" style="cursor: pointer;">
@@ -216,9 +520,25 @@
     <div class="banner2">
         
     </div>
-    <section class="chose">
-    <div>
-        <input type="image" class="chose_left" src="asset/image/s2.jpg" >
+   
+    <div class="slider_box">
+        <div>
+            <div>
+                 <input type="image" class="chose_left" src="asset/image/s2.jpg" >
+            </div>
+            <div>
+                <input type="image" class="chose_left" src="asset/image/s3.jpg" >
+           </div>
+           <div>
+                <input type="image" class="chose_left" src="asset/image/s4.jpg" >
+             </div>
+            <div>
+                 <input type="image" class="chose_left" src="asset/image/s5.jpg" >
+            </div>
+            <div>
+                  <input type="image" class="chose_left" src="asset/image/s6.jpg" >
+            </div>
+        </div>
     </div>
     
      <div class="chose_right">
@@ -229,7 +549,7 @@
         
     
        
-</section>
+
     <div class="hihi">  
     <div class="top_title_box22"></div>
     <div class="top_title_box">
@@ -309,31 +629,36 @@
     <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
         沒有版權 愛怎麼抄就怎麼抄<br>
     <%
-    try{
-        sql="SELECT * FROM `counter`";
-        ResultSet rs=con.createStatement().executeQuery(sql);
-        if(rs.next()){
-            String countString = rs.getString(1);
-            int count = Integer.parseInt(countString);
-            if(session.isNew()){
-                count=count+1;
-                countString = String.valueOf(count);
+        try{
+            sql="SELECT * FROM `counter`";
+            ResultSet rs=con.createStatement().executeQuery(sql);
+            if(rs.next()){
+                String countString = rs.getString(1);
+                int count = Integer.parseInt(countString);
+                if(session.isNew()){
+                    count=count+1;
+                    countString = String.valueOf(count);
 
-                sql="UPDATE `counter` SET `count` = "+countString;
-                con.createStatement().execute(sql);
+                    sql="UPDATE `counter` SET `count` = "+countString;
+                    con.createStatement().execute(sql);
+                }
+                out.println("你是第"+count+"位訪客");
+                con.close();
             }
-            out.println("你是第"+count+"位訪客");
-             con.close();
         }
-    }
-    catch(SQLException sExec){
-        out.println("SQL錯誤"+sExec.toString());
-    }
+        catch(SQLException sExec){
+            out.println("SQL錯誤"+sExec.toString());
+        }
     %>
     </p>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./asset/js/sign.js">
+</script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+
 </script>
 </body>
 </html>

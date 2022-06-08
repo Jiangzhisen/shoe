@@ -12,6 +12,37 @@
     <style>
         @import "asset/css/1.css";
         @import "asset/css/2.css";
+
+
+        .but label{
+            float: left;
+            width: 150px;
+            outline: none; 
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 5px #999;
+            font-size: 25px;
+            background-color: #d9b981;
+            text-align: center;
+        }
+
+        .but label:hover{
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 25px;
+            box-shadow: 0;
+            color: #fff;
+            background-color: black;
+        }
+
+        #size1,
+        #size2,
+        #size3,
+        #size4 {
+            display: none;
+        }
     </style>
         <link rel="stylesheet" type="text/css" href="./asset/css/login.css" />
         <link rel="stylesheet" type="text/css" href="./asset/js/sign.js" />
@@ -85,13 +116,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -122,13 +153,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -149,6 +180,7 @@
             out.println("</nav> ");
         }
     %>
+
 
     <!--     以上為HEADER        -->
 
@@ -234,21 +266,25 @@
                 out.println("<b>價錢:</b>$"+rs.getString(6)+"<br>");
                 out.println("<b>尺碼: </b><br>");
                 out.println("</p>");
+                out.println("<form class='shopp' action='addtocart.jsp'>");
                 out.println("<div class='but'>");
                 out.println("<li>");
-                out.println("<button><b>25</b></button>");
+                out.println("<label class='size1' for='size1' onclick='colorchange1()'><b>"+rs.getString(8)+"</b></label>");
+                out.println("<input type='radio' id='size1' name='size' value='"+rs.getString(8)+"' checked>");
                 out.println("</li>");
                 out.println("<li>");
-                out.println("<button><b>26</b></button>");
+                out.println("<label class='size2' for='size2' onclick='colorchange2()'><b>"+rs.getString(9)+"</b></label>");
+                out.println("<input type='radio' id='size2' name='size' value='"+rs.getString(9)+"'>");
                 out.println("</li>");
                 out.println("<li>");
-                out.println("<button><b>27</b></button>");
+                out.println("<label class='size3' for='size3' onclick='colorchange3()'><b>"+rs.getString(10)+"</b></label>");
+                out.println("<input type='radio' id='size3' name='size' value='"+rs.getString(10)+"'>");
                 out.println("</li>");
                 out.println("<li>");
-                out.println("<button><b>28</b></button>");
+                out.println("<label class='size4' for='size4' onclick='colorchange4()'><b>"+rs.getString(11)+"</b></label>");
+                out.println("<input type='radio' id='size4' name='size' value='"+rs.getString(11)+"'>");
                 out.println("</li>");
                 out.println("</div>");
-                out.println("<form class='shopp' action='addtocart.jsp'>");
                 out.println("<label class='lab'>訂購數量:</label>");
                 out.println("<input type='number' min='1' class='gogo1' name='buyqua' value=1>");
                 out.println("<input type='submit' value='加入購物車' class='gogo'>");
@@ -326,6 +362,227 @@
             沒有版權 愛怎麼抄就怎麼抄
         </p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./asset/js/sign.js"></script>
+    <script>
+        window.onload=function (){
+            $('.size1').css('border','none');
+            $('.size1').css('border-radius','none');
+            $('.size1').css('font-size','25px');
+            $('.size1').css('box-shadow','0');
+            $('.size1').css('color','#fff');
+            $('.size1').css('background-color','black');
+
+            $('.size2').css('width','150px');
+            $('.size2').css('outline','none');
+            $('.size2').css('border','pointer');
+            $('.size2').css('cursor','0');
+            $('.size2').css('border-radius','10px');
+            $('.size2').css('box-shadow','0 5px #999');
+            $('.size2').css('font-size','25px');
+            $('.size2').css('background-color','#d9b981');
+            $('.size2').css('color','black');
+            $('.size2').css('text-align','center');
+
+            $('.size3').css('width','150px');
+            $('.size3').css('outline','none');
+            $('.size3').css('border','pointer');
+            $('.size3').css('cursor','0');
+            $('.size3').css('border-radius','10px');
+            $('.size3').css('box-shadow','0 5px #999');
+            $('.size3').css('font-size','25px');
+            $('.size3').css('background-color','#d9b981');
+            $('.size3').css('color','black');
+            $('.size3').css('text-align','center');
+
+            $('.size4').css('width','150px');
+            $('.size4').css('outline','none');
+            $('.size4').css('border','pointer');
+            $('.size4').css('cursor','0');
+            $('.size4').css('border-radius','10px');
+            $('.size4').css('box-shadow','0 5px #999');
+            $('.size4').css('font-size','25px');
+            $('.size4').css('background-color','#d9b981');
+            $('.size4').css('color','black');
+            $('.size4').css('text-align','center');
+        }
+    </script>
+    <script>
+        function colorchange1(){
+            $('.size1').css('border','none');
+            $('.size1').css('border-radius','none');
+            $('.size1').css('font-size','25px');
+            $('.size1').css('box-shadow','0');
+            $('.size1').css('color','#fff');
+            $('.size1').css('background-color','black');
+
+            $('.size2').css('width','150px');
+            $('.size2').css('outline','none');
+            $('.size2').css('border','pointer');
+            $('.size2').css('cursor','0');
+            $('.size2').css('border-radius','10px');
+            $('.size2').css('box-shadow','0 5px #999');
+            $('.size2').css('font-size','25px');
+            $('.size2').css('background-color','#d9b981');
+            $('.size2').css('color','black');
+            $('.size2').css('text-align','center');
+
+            $('.size3').css('width','150px');
+            $('.size3').css('outline','none');
+            $('.size3').css('border','pointer');
+            $('.size3').css('cursor','0');
+            $('.size3').css('border-radius','10px');
+            $('.size3').css('box-shadow','0 5px #999');
+            $('.size3').css('font-size','25px');
+            $('.size3').css('background-color','#d9b981');
+            $('.size3').css('color','black');
+            $('.size3').css('text-align','center');
+
+            $('.size4').css('width','150px');
+            $('.size4').css('outline','none');
+            $('.size4').css('border','pointer');
+            $('.size4').css('cursor','0');
+            $('.size4').css('border-radius','10px');
+            $('.size4').css('box-shadow','0 5px #999');
+            $('.size4').css('font-size','25px');
+            $('.size4').css('background-color','#d9b981');
+            $('.size4').css('color','black');
+            $('.size4').css('text-align','center');
+        }
+
+
+        function colorchange2(){
+            $('.size1').css('width','150px');
+            $('.size1').css('outline','none');
+            $('.size1').css('border','pointer');
+            $('.size1').css('cursor','0');
+            $('.size1').css('border-radius','10px');
+            $('.size1').css('box-shadow','0 5px #999');
+            $('.size1').css('font-size','25px');
+            $('.size1').css('background-color','#d9b981');
+            $('.size1').css('color','black');
+            $('.size1').css('text-align','center');
+
+
+            $('.size2').css('border','none');
+            $('.size2').css('border-radius','none');
+            $('.size2').css('font-size','25px');
+            $('.size2').css('box-shadow','0');
+            $('.size2').css('color','#fff');
+            $('.size2').css('background-color','black');
+
+
+            $('.size3').css('width','150px');
+            $('.size3').css('outline','none');
+            $('.size3').css('border','pointer');
+            $('.size3').css('cursor','0');
+            $('.size3').css('border-radius','10px');
+            $('.size3').css('box-shadow','0 5px #999');
+            $('.size3').css('font-size','25px');
+            $('.size3').css('background-color','#d9b981');
+            $('.size3').css('color','black');
+            $('.size3').css('text-align','center');
+
+            $('.size4').css('width','150px');
+            $('.size4').css('outline','none');
+            $('.size4').css('border','pointer');
+            $('.size4').css('cursor','0');
+            $('.size4').css('border-radius','10px');
+            $('.size4').css('box-shadow','0 5px #999');
+            $('.size4').css('font-size','25px');
+            $('.size4').css('background-color','#d9b981');
+            $('.size4').css('color','black');
+            $('.size4').css('text-align','center');
+
+        }
+        function colorchange3(){
+            $('.size1').css('width','150px');
+            $('.size1').css('outline','none');
+            $('.size1').css('border','pointer');
+            $('.size1').css('cursor','0');
+            $('.size1').css('border-radius','10px');
+            $('.size1').css('box-shadow','0 5px #999');
+            $('.size1').css('font-size','25px');
+            $('.size1').css('background-color','#d9b981');
+            $('.size1').css('color','black');
+            $('.size1').css('text-align','center');
+
+
+            
+            $('.size2').css('width','150px');
+            $('.size2').css('outline','none');
+            $('.size2').css('border','pointer');
+            $('.size2').css('cursor','0');
+            $('.size2').css('border-radius','10px');
+            $('.size2').css('box-shadow','0 5px #999');
+            $('.size2').css('font-size','25px');
+            $('.size2').css('background-color','#d9b981');
+            $('.size2').css('color','black');
+            $('.size2').css('text-align','center');
+
+
+            $('.size3').css('border','none');
+            $('.size3').css('border-radius','none');
+            $('.size3').css('font-size','25px');
+            $('.size3').css('box-shadow','0');
+            $('.size3').css('color','#fff');
+            $('.size3').css('background-color','black');
+
+            $('.size4').css('width','150px');
+            $('.size4').css('outline','none');
+            $('.size4').css('border','pointer');
+            $('.size4').css('cursor','0');
+            $('.size4').css('border-radius','10px');
+            $('.size4').css('box-shadow','0 5px #999');
+            $('.size4').css('font-size','25px');
+            $('.size4').css('background-color','#d9b981');
+            $('.size4').css('color','black');
+            $('.size4').css('text-align','center');
+
+        }
+        function colorchange4(){
+            $('.size1').css('width','150px');
+            $('.size1').css('outline','none');
+            $('.size1').css('border','pointer');
+            $('.size1').css('cursor','0');
+            $('.size1').css('border-radius','10px');
+            $('.size1').css('box-shadow','0 5px #999');
+            $('.size1').css('font-size','25px');
+            $('.size1').css('background-color','#d9b981');
+            $('.size1').css('color','black');
+            $('.size1').css('text-align','center');
+
+            $('.size2').css('width','150px');
+            $('.size2').css('outline','none');
+            $('.size2').css('border','pointer');
+            $('.size2').css('cursor','0');
+            $('.size2').css('border-radius','10px');
+            $('.size2').css('box-shadow','0 5px #999');
+            $('.size2').css('font-size','25px');
+            $('.size2').css('background-color','#d9b981');
+            $('.size2').css('color','black');
+            $('.size2').css('text-align','center');
+
+
+            $('.size3').css('width','150px');
+            $('.size3').css('outline','none');
+            $('.size3').css('border','pointer');
+            $('.size3').css('cursor','0');
+            $('.size3').css('border-radius','10px');
+            $('.size3').css('box-shadow','0 5px #999');
+            $('.size3').css('font-size','25px');
+            $('.size3').css('background-color','#d9b981');
+            $('.size3').css('color','black');
+            $('.size3').css('text-align','center');
+
+
+            $('.size4').css('border','none');
+            $('.size4').css('border-radius','none');
+            $('.size4').css('font-size','25px');
+            $('.size4').css('box-shadow','0');
+            $('.size4').css('color','#fff');
+            $('.size4').css('background-color','black');
+        }
+    </script>
 </body>
 </html>

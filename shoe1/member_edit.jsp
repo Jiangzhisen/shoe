@@ -72,7 +72,7 @@
             
         </div>
     </header>
-    <%
+   <%
         String acct=String.valueOf(session.getAttribute("acct"));
         if(acct.equals("admin")){
             out.println("<nav style='width:70%; margin-left: 15%;'>");
@@ -82,13 +82,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -119,13 +119,13 @@
             out.println("<div class='dropdown'>");
             out.println("<button class='dropbtn'>常見問題</button>");
             out.println("<div class='dropdown-content'>");
-            out.println("<a href=''>Q&A</a>");
-            out.println("<a href=''>如何挑選</a>");
+            out.println("<a href='qa.jsp'>Q&A</a>");
+            out.println("<a href='about.jsp'>小知識</a>");
             out.println("</div>");
             out.println("</div>");
             out.println("</li>");
             out.println("<li class='menu1'>");
-            out.println("<a href='' style='text-decoration: none' class='menubtn'>關於我們</a>");
+            out.println("<a href='cclemon.jsp' style='text-decoration: none' class='menubtn'>關於我們</a>");
             out.println("</li>");
             out.println("<li class='menu1'>");
             out.println("<div class='dropdown'>");
@@ -217,15 +217,15 @@
         </div>
         <div class="member_info_box" >
             <label class="member_info2" >性別:</label>
-            <input style="height:35px; width:35px;" type="radio" class="member_info_edit_r" name="member_info_edit_r"  value="男" ><label class="member_info2" >男</label>
+            <input style="height:35px; width:35px;" type="radio" class="member_info_edit_r" name="member_info_edit_r"  value="男" checked><label class="member_info2" >男</label>
             <input style="height:35px; width:35px;" type="radio" class="member_info_edit_r"  name="member_info_edit_r" value="女" ><label class="member_info2" >女</label>
         </div>
 
         <div class="member_info_box" >
             <label class="member_info2" >你是一隻?</label>
-            <input style="height:35px; width:35px;" type="radio" class="member_info_edit_r" name="member_animal"  value="animal1" ><label class="member_info2" >猩猩</label>
-            <input style="height:35px; width:35px;" type="radio" class="member_info_edit_r" name="member_animal"  value="animal2" ><label class="member_info2" >山羊</label>
-            <input style="height:35px; width:35px;" type="radio" class="member_info_edit_r" name="member_animal"  value="animal3" ><label class="member_info2" >馬</label>
+            <input style="height:35px; width:25px;" type="radio" class="member_info_edit_r" name="member_animal"  value="animal1" checked><label class="member_info2" style="font-size: 30px;">猩猩</label>
+            <input style="height:35px; width:25px;" type="radio" class="member_info_edit_r" name="member_animal"  value="animal2" ><label class="member_info2" style="font-size: 30px;">山羊</label>
+            <input style="height:35px; width:25px;" type="radio" class="member_info_edit_r" name="member_animal"  value="animal3" ><label class="member_info2" style="font-size: 30px;">馬</label>
         </div>
         <div class="member_info_box" >
             <label class="member_info2" >郵箱:</label>

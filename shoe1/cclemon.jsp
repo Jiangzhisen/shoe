@@ -8,13 +8,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>結帳</title>
-    <style>
-        @import url(asset/css/4.css);
-        @import url(asset/css/1.css);
-    </style>
+    <title>組員資料</title>
+    <link rel="stylesheet" type="text/css" href="./asset/css/1.css" />
     <link rel="stylesheet" type="text/css" href="./asset/css/login.css" />
-    <link rel="stylesheet" type="text/css" href="./asset/js/sign.js" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/cclemon.css" />
+    
 </head>
 <body>
     <header>
@@ -168,7 +166,7 @@
                         <div class="tab"></div>
                         <input type="password" id="pass" placeholder="密碼" required name="pass1">
                         <div class="tab"></div>
-                        <input type="submit" value="登入" class="submit" onclick="location.href='#'" style="cursor: pointer;">
+                        <input type="submit" value="登入" class="submit" style="cursor: pointer;">
                     </form>
     
                     <h3 onclick="show2()" style="cursor: pointer;">註冊帳號</h3>
@@ -192,7 +190,7 @@
                         <div class="tab"></div>
                         <input type="password" id="pass2" placeholder="密碼" required name="pass">
                         <div class="tab"></div>
-                        <input type="password" id="cpass" placeholder=" 確認密碼" required name="cpass">
+                        <input type="text" id="cpass" placeholder=" 確認密碼" required name="cpass">
                         <div class=" tab">
                         </div>
                         <input type="submit" value="註冊" class="submit" style="cursor: pointer;">
@@ -210,63 +208,71 @@
     
 </div>
 <!--     以上為登入畫面        -->
-    <section>
-        <%
-            if(con.isClosed()){
-                out.println("建立連線失敗");
-            }
-            else{
-                if(session.getAttribute("acct") != null){
-                    request.setCharacterEncoding("UTF-8");
-                    response.setCharacterEncoding("UTF-8");
-                    String cart_acct=String.valueOf(session.getAttribute("acct"));
-                    sql="SELECT *, (`quantity` * `price`), SUM(`quantity`), SUM(`quantity` * `price`) FROM `shoppingcart` WHERE `account`='"+cart_acct+"'";
-                    ResultSet rs=con.createStatement().executeQuery(sql);
-                    rs.next();
 
-                    if(rs.getString(2) == null || rs.getString(2).equals("")){
-                        con.close();
-                        response.sendRedirect("model.jsp");
-                    }
-                    else{
-                        out.println("<div class='paylist'>");
-                        out.println("<div class='ppa'>結帳</div>");
-                        out.println("<div class='list'>");
-                        out.println("<form class='shopp' action='addOrder.jsp'>");
-                        out.println("<label for='' class='lab'>商品總數:&nbsp;&nbsp;"+rs.getString(10)+" <br></label>");
-                        out.println("<label for='' class='lab'>總價錢:&nbsp;&nbsp;&nbsp;$ "+rs.getString(11)+"<br></label>");
-                        out.println("<label for='' class='lab'>訂購位址:<input type='text' class='place' name='address' required><br></label>");
-                        out.println("<label for='' class='lab'>取貨方式:   </label>");
-                        out.println("<select size='1' class='paywhere' name='method'>");
-                        out.println("<option>7-11</option>");
-                        out.println("<option>全家</option>");
-                        out.println("<option>宅配</option>");
-                        out.println("</select></br>");
-                        out.println("<label for='' class='lab'>備註：</label><br>");
-                        out.println("<textarea cols='40' rows='5' wrap='hard' class='ssay' name='remark'></textarea><br>");
-                        out.println("<input type='submit' value='確認訂單' class='senta1'>");
-                        out.println("</form>");
-                        out.println("</div>");
-                        out.println("</div>");
 
-                        con.close();
-                    }
-                }
-                else{
-                    con.close();
-                    out.println("<script language='javascript'>");
-                    out.println("alert('您尚未登入 ! !');");
-                    out.println("window.location.href='index.jsp'");
-                    out.println("</script>");
-                }
-            }
-        %>
-    </section>
+<div class="cc_box" >
+    
+   
+    <div class="cc_photo_box">
+        <div class="c1">
+
+            <div class="cc_photo">
+                <img class = "cc_photo2" src="./asset/image/ping2.jpg">
+            </div>
+            <div class="cc_detail">
+                <h1 class="cc_tittle">陳品叡</h1>
+                
+            <a href="https://www.instagram.com/r_a_y_5_5/" target=_blank> <img src="./asset/image/ig.png" class="icon"></a>
+            
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="cc_photo_box">
+        <div class="cc_photo">
+            <img class = "cc_photo2" src="./asset/image/sean.jpg">
+        </div>
+        <div class="cc_detail">
+            <h1 class="cc_tittle">翁浩翔</h1>
+           
+            <a href="https://instagram.com/boyceccc?igshid=YmMyMTA2M2Y=" target=_blank> <img src="./asset/image/ig.png" class="icon"></a>
+        
+        </div>
+    </div>
+    <div class="cc_photo_box">
+        <div class="cc_photo">
+            <img class = "cc_photo2" src="./asset/image/jhon.jpg">
+        </div>
+        <div class="cc_detail">
+            <h1 class="cc_tittle">姜智森</h1>
+           
+            <a href="https://www.instagram.com/zhisen_0714/" target=_blank> <img src="./asset/image/ig.png" class="icon"></a>
+        
+        </div>
+    </div>
+
+    <div class="cc_photo_box">
+        <div class="cc_photo">
+           <a></a> <img class = "cc_photo2" src="./asset/image/song.png">
+        </div>
+        <div class="cc_detail">
+            <h1 class="cc_tittle">宋雨蕎</h1>
+            
+            <a href="https://www.instagram.com/krank0000/" target=_blank> <img src="./asset/image/ig.png" class="icon"></a>
+        
+        </div>
+    </div>
+
+
+</div>
+
+
     <footer>
         <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
             沒有版權 愛怎麼抄就怎麼抄
         </p>
-    </footer>
     <script src="./asset/js/sign.js"></script>
 </body>
 </html>

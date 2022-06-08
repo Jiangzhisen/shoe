@@ -12,7 +12,10 @@
             String pname=request.getParameter("pname");
             String color=request.getParameter("color");
             String category=request.getParameter("category");
-            String size=request.getParameter("size");
+            String size1=request.getParameter("size1");
+            String size2=request.getParameter("size2");
+            String size3=request.getParameter("size3");
+            String size4=request.getParameter("size4");
             String intro=request.getParameter("intro");
             String price=request.getParameter("price");
             String quantity=request.getParameter("quantity");
@@ -23,7 +26,7 @@
             if(rs.next()){
                 sql="UPDATE `product` SET `pname`='"+pname+"' WHERE `pname`='"+pname+"'";
                 con.createStatement().execute(sql);
-                sql="UPDATE `product` SET `picture`='"+picture+"' WHERE `pname`='"+pname+"'";
+                sql="UPDATE `product` SET `picture`='./asset/image/"+picture+".jpg' WHERE `pname`='"+pname+"'";
                 con.createStatement().execute(sql);
                 sql="UPDATE `product` SET `describe`='"+intro+"' WHERE `pname`='"+pname+"'";
                 con.createStatement().execute(sql);
@@ -33,7 +36,13 @@
                 con.createStatement().execute(sql);
                 sql="UPDATE `product` SET `color`='"+color+"' WHERE `pname`='"+pname+"'";
                 con.createStatement().execute(sql);
-                sql="UPDATE `product` SET `size2`='"+size+"' WHERE `pname`='"+pname+"'";
+                sql="UPDATE `product` SET `size1`='"+size1+"' WHERE `pname`='"+pname+"'";
+                con.createStatement().execute(sql);
+                sql="UPDATE `product` SET `size2`='"+size2+"' WHERE `pname`='"+pname+"'";
+                con.createStatement().execute(sql);
+                sql="UPDATE `product` SET `size3`='"+size3+"' WHERE `pname`='"+pname+"'";
+                con.createStatement().execute(sql);
+                sql="UPDATE `product` SET `size4`='"+size4+"' WHERE `pname`='"+pname+"'";
                 con.createStatement().execute(sql);
                 sql="UPDATE `product` SET `category`='"+category+"' WHERE `pname`='"+pname+"'";
                 con.createStatement().execute(sql);
