@@ -1,0 +1,44 @@
+.qabox{
+    background-image: url(../image/b4.jpg);
+    text-align: left;
+    margin-top: 4%;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 10px;
+    padding: 20px;
+    line-height: 60px;
+    
+}
+.titqa{
+    font-size: 55px;
+    text-align: center;
+}
+.titqa:hover{
+    color: gray;
+    cursor: default;
+}
+.q1{
+    font-size: 40px;
+    font-weight: bolder;
+    transition: ease-in 1s;
+    
+}
+.a1:focus{
+    height: 20%;
+    transition:1s;
+}
+.a1{
+    font-size: 33px;
+    transition: ease-in 1s;
+    height: 5%;
+}
+.a1:hover{
+    color: aliceblue;
+    transition: 1s;
+    cursor: default;
+}
+.q1:hover{
+    color: aliceblue;
+    transition: 1s;
+    cursor: default;
+}

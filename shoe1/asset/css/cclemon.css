@@ -1,0 +1,64 @@
+.cc_box{
+    position: flex;
+    width: 100%;
+    height: 1000px;
+    text-align:center;
+}
+.cc_photo_box{
+    background-color: antiquewhite;
+    font-size: 35px;
+    border-radius: 25px;
+    margin-left: 3%;
+    margin-top: 5%;
+    width: 360px;
+    display: inline-block;
+    height: auto;
+
+}
+.cc_photo{
+    filter: blur(10px);
+    transition: ease-in 0.5s;
+    margin-left: 3%;
+    margin-top: 5%;
+    padding: 25px;
+    width: 280px;
+    background-image: url(../image/b2.jpg);
+    border-radius: 20px;
+}
+.cc_photo2{
+    
+    width: 280px;
+    height: 280px;
+    border-radius: 10px;
+}
+.cc_detail{
+    
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 10%;
+    font-size: 30px;
+}
+.cc_tittle{
+    margin-top: 2%;
+    text-align: center;    
+    font-size: 50px;
+    font-weight: bolder;
+}
+.icon{
+    display: inline block;
+    margin: 30px 80px;
+    width: 90px;
+    height: 90px;
+}
+.cc_photo:hover{
+    transition: 0.5s;
+    filter: blur(0px);
+}
+
+
+
+
+
+
+
+
