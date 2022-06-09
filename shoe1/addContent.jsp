@@ -25,7 +25,36 @@
             String new_name=rs.getString(3);
             String new_content=request.getParameter("content");
             String product=request.getParameter("product");
+            String star=request.getParameter("star");
             java.sql.Date new_date=new java.sql.Date(System.currentTimeMillis());
+
+
+            int starnum=Integer.parseInt(star);
+            int starnum1=0;
+            if(starnum==1){
+                starnum1=starnum+4;
+            }
+            if(starnum==2){
+                starnum1=starnum+2;
+            }
+            if(starnum==3){
+                starnum1=starnum;
+            }
+            if(starnum==4){
+                starnum1=starnum-2;
+            }
+            if(starnum==5){
+                starnum1=starnum-4;
+            }
+
+            String stars="";
+            for(int i=0;i<starnum1;i++){
+                stars+="★";
+            }
+
+
+
+
             if(new_content == null || new_content.equals("")){
             out.println("<script language='javascript'>");
             out.println("alert('請填寫留言內容 ! !');");
@@ -34,9 +63,10 @@
 
             }
             else{
-                sql="INSERT board (`GBName`, `Content`, `Putdate`, `product`)";
+                sql="INSERT board (`GBName`, `Content`, `star`, `Putdate`, `product`)";
                 sql+="VALUES ('"+new_name+"', ";
                 sql+="'"+new_content+"', ";
+                sql+="'"+stars+"', ";
                 sql+="'"+new_date+"', ";
                 sql+="'"+product+"')";
 

@@ -21,6 +21,7 @@
             String strqua=request.getParameter("buyqua");
             String strsize=request.getParameter("size");
             String strprice=rs.getString(6);
+            String strpid=request.getParameter("shoeid");
 
             sql="SELECT `pname`, `quantity`, `size` FROM `shoppingcart` WHERE `account`='"+stracct+"' AND `pname`='"+strname+"' AND `size`='"+strsize+"'";
             ResultSet cartrs=con.createStatement().executeQuery(sql);
@@ -39,7 +40,7 @@
                 out.println("</script>");
             }
             else{
-                sql="INSERT shoppingcart (`account`, `pname`, `picture`, `color`, `quantity`, `price`, `size`, `total`) ";
+                sql="INSERT shoppingcart (`account`, `pname`, `picture`, `color`, `quantity`, `price`, `size`, `pid`) ";
                 sql+="VALUES ('"+stracct+"', ";
                 sql+="'"+strname+"', ";
                 sql+="'"+strpicture+"', ";
@@ -47,7 +48,7 @@
                 sql+="'"+strqua+"', ";
                 sql+="'"+strprice+"', ";
                 sql+="'"+strsize+"', ";
-                sql+="'0')";
+                sql+="'"+strpid+"')";
 
                 con.createStatement().execute(sql);
                 con.close();

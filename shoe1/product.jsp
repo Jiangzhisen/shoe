@@ -301,27 +301,17 @@
 
                         <div class="stars">
                             <form class="talk" action="addContent.jsp">
-                                    <div class="rating">
-                                        <input type="radio" name="star" id="star1">
+                                    <div class="rating" style="margin-left:35%;">
+                                        <input type="radio" name="star" id="star1" value="1">
                                         <label for="star1"></label>
-                                        <input type="radio" name="star" id="star2">
+                                        <input type="radio" name="star" id="star2" value="2">
                                         <label for="star2"></label>
-                                        <input type="radio" name="star" id="star3">
+                                        <input type="radio" name="star" id="star3" value="3">
                                         <label for="star3"></label>
-                                        <input type="radio" name="star" id="star4">
+                                        <input type="radio" name="star" id="star4" value="4">
                                         <label for="star4"></label>
-                                        <input type="radio" name="star" id="star5">
+                                        <input type="radio" name="star" id="star5" value="5">
                                         <label for="star5"></label>
-                                        <input type="radio" name="star" id="star6">
-                                        <label for="star6"></label>
-                                        <input type="radio" name="star" id="star7">
-                                        <label for="star7"></label>
-                                        <input type="radio" name="star" id="star8">
-                                        <label for="star8"></label>
-                                        <input type="radio" name="star" id="star9">
-                                        <label for="star9"></label>
-                                        <input type="radio" name="star" id="star10">
-                                        <label for="star10"></label>
                                     </div>                        
                                     <input type="text" class="haha" id="" name="content" placeholder="留下你的留言吧">
                                     <input type="hidden" name="product" value="<%=product_intro%>">
@@ -329,6 +319,7 @@
                             </form>
                         </div>
                 <%
+                    request.setCharacterEncoding("UTF-8");
                     String shoeone1=request.getParameter("shoe");
                     sql="SELECT * FROM `board` WHERE `product`='"+shoeone1+"'";
                     rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
@@ -343,9 +334,9 @@
                     while(rs.next()){
                         out.println("<div class='comm'>");
                         out.println("會員姓名:"+rs.getString(2)+"<br>");
-                        out.println("評價:★★★★★★★★★★<br>");
+                        out.println("評價:"+rs.getString(4)+"<br>");
                         out.println("留言內容:"+rs.getString(3)+"<br>");
-                        out.println("留言時間:"+rs.getString(4)+"<br>");
+                        out.println("留言時間:"+rs.getString(5)+"<br>");
                         out.println("</div>");
                     }
                     con.close();

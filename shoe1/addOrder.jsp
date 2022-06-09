@@ -35,8 +35,10 @@
                 String size=cartrs.getString(7);
                 String color=cartrs.getString(4);
                 String picture=cartrs.getString(3);
+                String pid=cartrs.getString(8);
 
-                sql="INSERT order_record (`account`, `name`, `pname`, `picture`, `color`, `size`, `tolqua`, `tolpri`, `address`, `method`, `remark`, `Putdate`)";
+
+                sql="INSERT order_record (`account`, `name`, `pname`, `picture`, `color`, `size`, `tolqua`, `tolpri`, `address`, `method`, `remark`, `Putdate`, `pid`)";
                 sql+="VALUES ('"+cart_acct+"', ";
                 sql+="'"+name+"', ";
                 sql+="'"+prodname+"', ";
@@ -48,7 +50,8 @@
                 sql+="'"+address+"', ";
                 sql+="'"+method+"', ";
                 sql+="'"+remark+"', ";
-                sql+="'"+new_date+"')";
+                sql+="'"+new_date+"', ";
+                sql+="'"+pid+"')";
                 con.createStatement().execute(sql);
 
                 sql="SELECT * FROM `product` WHERE `pname`='"+prodname+"'";

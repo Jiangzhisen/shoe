@@ -240,12 +240,21 @@
                     String buytime=rs.getString(3);
                     String method=rs.getString(4);
                     String remark=rs.getString(5);
-                    
+                    int tolprice=Integer.parseInt(amount);
+                    int totalprice=0;
+
+                    if(tolprice>=5000){
+                        totalprice=tolprice-200;
+                    }
+                    else{
+                        totalprice=tolprice;
+                    }
 
 
                     out.println("<div class='member_histry_box' >");
-                    out.println("<pre class='member_info' >購買日期:"+Putdate+"<br>消費金額:"+amount+"<br>付款方式:"+method+"<br>備註:"+remark+"</pre>");
+                    out.println("<pre class='member_info' >購買日期:"+Putdate+"<br>消費金額:"+totalprice+"<br>付款方式:"+method+"<br>備註:"+remark+"</pre>");
                     out.println("</div>");
+
 
                     while(ors.next()){
                         String pname=ors.getString(4);

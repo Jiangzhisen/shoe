@@ -224,6 +224,16 @@
                     ResultSet rs=con.createStatement().executeQuery(sql);
                     rs.next();
 
+                    int tolprice=Integer.parseInt(rs.getString(11));
+                    int totalprice=0;
+
+                    if(tolprice>=5000){
+                        totalprice=tolprice-200;
+                    }
+                    else{
+                        totalprice=tolprice;
+                    }
+
                     if(rs.getString(2) == null || rs.getString(2).equals("")){
                         con.close();
                         response.sendRedirect("model.jsp");
@@ -234,7 +244,7 @@
                         out.println("<div class='list'>");
                         out.println("<form class='shopp' action='addOrder.jsp'>");
                         out.println("<label for='' class='lab'>商品總數:&nbsp;&nbsp;"+rs.getString(10)+" <br></label>");
-                        out.println("<label for='' class='lab'>總價錢:&nbsp;&nbsp;&nbsp;$ "+rs.getString(11)+"<br></label>");
+                        out.println("<label for='' class='lab'>總價錢:&nbsp;&nbsp;&nbsp;$ "+totalprice+"<br></label>");
                         out.println("<label for='' class='lab'>訂購位址:<input type='text' class='place' name='address' required><br></label>");
                         out.println("<label for='' class='lab'>取貨方式:   </label>");
                         out.println("<select size='1' class='paywhere' name='method'>");
