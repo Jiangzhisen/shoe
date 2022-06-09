@@ -1,0 +1,23 @@
+.wrap_add{
+    height: 100px; width: 1260px;
+    position: absolute;
+    left: 250px;top: 950px;
+}
+.cont_out_add{
+    font-size: 50px;
+    position: relative;
+    left: 100px;top: -65px;
+    width: 1150px;
+}
+.cont_add{
+    overflow: hidden;
+}
+
+@keyframes move{
+    0%{transform: translateX(100%)}
+    100%{transform: translateX(-100%);}
+}
+
+.cont_add_text{
+    animation: move 15s linear infinite;
+}
