@@ -497,7 +497,7 @@
                         <div class="tab"></div>
                         <input type="password" id="pass2" placeholder="密碼" required name="pass">
                         <div class="tab"></div>
-                        <input type="text" id="cpass" placeholder=" 確認密碼" required name="cpass" name="name4">
+                        <input type="password" id="cpass" placeholder=" 確認密碼" required name="cpass" name="name4">
                         <div class=" tab">
                         </div>
                         <input type="submit" value="註冊" class="submit" style="cursor: pointer;">
