@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>靴を買う</title>
     <style>
         .shoe1{
         display: inline-block;
@@ -524,7 +524,7 @@
         <img src="asset/image/megaphone.png" width="80px">
         <div class="cont_out_add">
             <div class="cont_add">
-                <p class="cont_add_text">全館消費滿$5000折200!!!</p>
+                <p class="cont_add_text">全館消費滿$5000折200!!!    新店開張，全館免運!!!</p>
             </div>
         </div>
     </div>
@@ -550,9 +550,19 @@
     </div>
     
      <div class="chose_right">
-         
-       <h1>鞋槓青年</h1>
-       <p>132132</p>
+         <br>
+       <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我們的人生總是充滿意外
+        成為鞋槓青年會是你的好選擇
+        現在的人哪個不是有好幾雙鞋呢
+        人生在世最重要就是開心
+        鞋子為生活帶來不同的心情顏色 &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每雙鞋都有自己的故事
+        等著我們撰寫一章章的故事
+        人生可能會後悔，但不要造成遺憾吧<br>
+        進來看看吧!
+        我們彼此都不知道我們會有什麼樣的體驗!<br>
+        </h1>
+       <p></p>
     </div>
         
     
@@ -579,7 +589,7 @@
                 i+=1;
                 if(i<5){
                     out.println("<div class='hot_shoe'>");
-                    out.println("<form method='post' action='product.jsp'>");
+                    out.println("<form method='post' action='product.jsp' style='font-size:35px;'>");
                     out.println("<input type='image' class='hot_picture' src='"+prors.getString(2)+"' >");
                     out.println("<p><div class='chocolate_word1'>"+prors.getString(1)+"</div></p>");
                     out.println("<input type='hidden' name='shoe' value='"+prors.getString(3)+"'>");
@@ -612,7 +622,7 @@
             i+=1;
             if(i<5){
                 out.println("<div class='hot_shoe'>");
-                out.println("<form method='post' action='product.jsp'>");
+                out.println("<form method='post' action='product.jsp' style='font-size:35px;'>");
                 out.println("<input type='image' class='hot_picture' src='"+newprors.getString(3)+"' >");
                 out.println("<p><div class='chocolate_word1'>"+newprors.getString(2)+"</div></p>");
                 out.println("<input type='hidden' name='shoe' value='"+newprors.getString(1)+"'>");

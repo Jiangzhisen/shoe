@@ -253,6 +253,7 @@
                 sql="SELECT * FROM `product` WHERE `pid`='"+product_intro+"'";
                 ResultSet rs=con.createStatement().executeQuery(sql);
                 rs.next();
+                int quantity=Integer.parseInt(rs.getString(5));
 
                 out.println("<div class='shoepic'>");
                 out.println("<img class = 'pic' src='"+rs.getString(3)+"'>");
@@ -286,7 +287,7 @@
                 out.println("</li>");
                 out.println("</div>");
                 out.println("<label class='lab'>訂購數量:</label>");
-                out.println("<input type='number' min='1' class='gogo1' name='buyqua' value=1>");
+                out.println("<input type='number' min='1' max='"+quantity+"' class='gogo1' name='buyqua' value=1 oninput='if(value<1)value=1;if(value>="+quantity+")value="+quantity+"'>");
                 out.println("<input type='submit' value='加入購物車' class='gogo'>");
                 out.println("<input type='hidden' name='shoeid' value="+product_intro+">");
                 out.println("</form>");

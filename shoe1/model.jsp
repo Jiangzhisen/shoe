@@ -216,7 +216,7 @@
             out.println("建立連線失敗");
         }
         else{
-            sql="SELECT * FROM `product` WHERE `category`='板鞋'";
+            sql="SELECT * FROM `product` WHERE `category`='板鞋' AND `status`='上架中'";
             ResultSet rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
             out.println("<div class='cls'>");
             out.println("<div id='skater'>");
@@ -245,7 +245,7 @@
             out.println("</div>");
 
 
-            sql="SELECT * FROM `product` WHERE `category`='運動鞋'";
+            sql="SELECT * FROM `product` WHERE `category`='運動鞋' AND `status`='上架中'";
             rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
             out.println("<div class='cls'>");
             out.println("<div id='sneaker'>");
@@ -274,7 +274,7 @@
             out.println("</div>");
 
 
-            sql="SELECT * FROM `product` WHERE `category`='靴子'";
+            sql="SELECT * FROM `product` WHERE `category`='靴子' AND `status`='上架中'";
             rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
             out.println("<div class='cls'>");
             out.println("<div id='boots'>");
@@ -303,7 +303,7 @@
             out.println("</div>");
 
 
-            sql="SELECT * FROM `product` WHERE `category`='休閒鞋'";
+            sql="SELECT * FROM `product` WHERE `category`='休閒鞋' AND `status`='上架中'";
             rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
             out.println("<div class='cls'>");
             out.println("<div id='casual'>");

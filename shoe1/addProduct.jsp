@@ -32,7 +32,7 @@
                 out.println("</script>");
             }
             else{
-                sql="INSERT product (`pname`, `picture`, `describe`, `quantity`, `price`, `color`, `size1`, `size2`, `size3`, `size4`, `category`)";
+                sql="INSERT product (`pname`, `picture`, `describe`, `quantity`, `price`, `color`, `size1`, `size2`, `size3`, `size4`, `category`, `status`)";
                 sql+="VALUES ('"+pname+"', ";
                 sql+="'./asset/image/"+picture+".jpg', ";
                 sql+="'"+intro+"', ";
@@ -43,7 +43,8 @@
                 sql+="'"+size2+"', ";
                 sql+="'"+size3+"', ";
                 sql+="'"+size4+"', ";
-                sql+="'"+category+"')";
+                sql+="'"+category+"', ";
+                sql+="'上架中')";
                 con.createStatement().execute(sql);
 
                 con.close();

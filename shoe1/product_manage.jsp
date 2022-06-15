@@ -9,12 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>管理畫面</title>
-
-    <link rel="stylesheet" type="text/css" href="./asset/css/administrator1.css" />
-    <link rel="stylesheet" type="text/css" href="./asset/css/administrator2.css" />
-    <link rel="stylesheet" type="text/css" href="./asset/css/3.css" />
-    <link rel="stylesheet" type="text/css" href="./asset/css/1.css" />
+    <title>存貨管理</title>
+    <style>
+        @import "asset/css/1.css";
+        @import "asset/css/2.css";
+    </style>
+        <link rel="stylesheet" type="text/css" href="./asset/css/product_manage.css" />
+        <link rel="stylesheet" type="text/css" href="./asset/js/sign.js" />
 
 </head>
 <body>
@@ -211,156 +212,54 @@
     
 </div>
 <!--     以上為登入畫面        -->
-    
-        <div class="QAZ" style="height:3400px;">
-            <div class="lp">
-                <div class="cont1" style="height: 1100px;">
-        
-                    <div class="login">
-        
-                        <h1>新增商品</h1>
-                        <br><br>
-                        <form method="post" action="addProduct.jsp">
-                            請輸入商品名稱  <input type="text" class="uname" required name="pname">
-                            <div class="tab"></div>
-                            請輸入商品顏色   <input type="text" class="pass" required name="color">
-                            <div class="tab"></div>
-                            請選擇商品類別   &nbsp;<select size="1" class="pass6" name="category" style="font-size:25px; width: 250px; margin: 18px; padding: 5px;">
-                                <option>板鞋</option>
-                                <option>運動鞋</option>
-                                <option>靴子</option>
-                                <option>休閒鞋</option>
-                            </select>
-                            <div class="tab"></div>
-                            請輸入商品尺寸1   <input type="text" class="pass" required name="size1">
-                            <div class="tab"></div>
-                            請輸入商品尺寸2   <input type="text" class="pass" required name="size2">
-                            <div class="tab"></div>
-                            請輸入商品尺寸3   <input type="text" class="pass" required name="size3">
-                            <div class="tab"></div>
-                            請輸入商品尺寸4   <input type="text" class="pass" required name="size4">
-                            <div class="tab"></div>
-                            請輸入商品介紹   <input type="text" class="pass" required name="intro">
-                            <div class="tab"></div>
-                            請輸入商品價格   <input type="text" class="pass" required name="price">
-                            <div class="tab"></div>
-                            請輸入商品庫存   <input type="text" class="pass" required name="quantity">
-                            <div class="tab"></div>
-                            請輸入圖片名稱   <input type="text" class="pass" required name="picture">
-                            <div class="tab"></div>
-                            <br>
-                            <input type="submit" value="送出" class="submit" style="cursor: pointer;">
-                        </form>
-                    </div>
-                </div>
+<section>
+        <div class="comments">
+            <div class="combox">
+                <h1 class="tit2">存貨管理</h1>
+                <div class="comm">
+                    <table>
+                        <tr>
+                            <td>產品編號</td>
+                            <td>產品名稱</td>
+                            <td>庫存數量</td>
+                            <td>商品狀態</td>
+                            <td colspan=5 style="text-align:center;">狀態選項</td>
 
-                <div class="cont1" style="height: 1100px;">
-        
-                    <div class="login">
-        
-                        <h1>修改商品</h1>
-                        <br><br>
-                        <form method="get" action="modify_Product.jsp">
-                            請輸入商品名稱  <input type="text" class="uname" required name="pname">
-                            <div class="tab"></div>
-                            請輸入商品顏色   <input type="text" class="pass" required name="color">
-                            <div class="tab"></div>
-                            請選擇商品類別   &nbsp;<select size="1" class="pass6" name="category" style="font-size:25px; width: 250px; margin: 18px; padding: 5px;">
-                                <option>板鞋</option>
-                                <option>運動鞋</option>
-                                <option>靴子</option>
-                                <option>休閒鞋</option>
-                            </select>
-                            <div class="tab"></div>
-                            請輸入商品尺寸1   <input type="text" class="pass" required name="size1">
-                            <div class="tab"></div>
-                            請輸入商品尺寸2   <input type="text" class="pass" required name="size2">
-                            <div class="tab"></div>
-                            請輸入商品尺寸3   <input type="text" class="pass" required name="size3">
-                            <div class="tab"></div>
-                            請輸入商品尺寸4   <input type="text" class="pass" required name="size4">
-                            <div class="tab"></div>
-                            請輸入商品介紹   <input type="text" class="pass" required name="intro">
-                            <div class="tab"></div>
-                            請輸入商品價格   <input type="text" class="pass" required name="price">
-                            <div class="tab"></div>
-                            請輸入商品庫存   <input type="text" class="pass" required name="quantity">
-                            <div class="tab"></div>
-                            請輸入圖片名稱   <input type="text" class="pass" required name="picture">
-                            <div class="tab"></div>
-                            <br>
-                            <input type="submit" value="送出" class="submit" style="cursor: pointer;">
-                        </form>
-                    </div>
-                </div>
+                        </tr>
+                        <%
+                            sql="SELECT * FROM `product`";
+                            ResultSet rs=con.createStatement().executeQuery(sql);
+                            while(rs.next()){
+                                out.println("<tr>");
+                                out.println("<form action='setProductStatus.jsp' method='get'>");
+                                out.println("<td>"+rs.getString(1)+"</td>");
+                                out.println("<td>"+rs.getString(2)+"</td>");
+                                out.println("<td>"+rs.getString(5)+"</td>");
+                                out.println("<td>"+rs.getString(13)+"</td>");
+                                out.println("<td><select size='1' class='pass6' name='status' style='font-size:25px; width: 250px; margin: 18px; padding: 5px;'>");
+                                out.println("<option>上架</option>");
+                                out.println("<option>下架</option>");
+                                out.println("</select></td>");
+                                out.println("<input type='hidden' name='pid' value='"+rs.getString(1)+"'>");
+                                out.println("<td><input type='submit' value='更新' style='cursor:pointer; font-size='75px';'></td>");
+                                out.println("</form>");
+                                out.println("</tr>");
+                            }
 
-                <div class="cont2">
-        
-                    <div class="login">
-        
-                        <h1>刪除商品</h1>
-                        <br><br>
-                        <form method="post" action="delproduct.jsp">
-                            請輸入商品名稱  <input type="text" class="uname" required name="pname">
-                            <div class="tab"></div>
-                            <br>
-                            <input type="submit" value="送出" class="submit" style="cursor: pointer;">
-                        </form>
-                    </div>
+                            con.close();
+                        %>
+                    </table>
                 </div>
-
-                <div class="cont2">
-        
-                    <div class="login">
-        
-                        <h1>存貨管理</h1>
-                        <br><br>
-                        <form method="post" action="product_manage.jsp">
-                            <div class="tab"></div>
-                            <br>
-                            <input type="submit" value="查詢" class="submit" style="cursor: pointer;">
-                        </form>
-                    </div>
-                </div>
-
-                <div class="cont2">
-        
-                    <div class="login">
-        
-                        <h1>訂單紀錄</h1>
-                        <br><br>
-                        <form method="post" action="order_record.jsp">
-                            <div class="tab"></div>
-                            <br>
-                            <input type="submit" value="查詢" class="submit" style="cursor: pointer;">
-                        </form>
-                    </div>
-                </div>
-
-                <div class="cont2">
-        
-                    <div class="login">
-        
-                        <h1>回饋反映</h1>
-                        <br><br>
-                        <form method="post" action="feedback_record.jsp">
-                            <div class="tab"></div>
-                            <br>
-                            <input type="submit" value="查詢" class="submit" style="cursor: pointer;">
-                        </form>
-                    </div>
-                </div>
-
+                <br><br><br>
             </div>
         </div>
 
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    
+    </section>
+    <footer>
+        <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
+            沒有版權 愛怎麼抄就怎麼抄
+        </p>
+    </footer>
     <script src="./asset/js/sign.js"></script>
-        <footer>
-            <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
-                沒有版權 愛怎麼抄就怎麼抄
-            </p>
-        </footer>
 </body>
 </html>

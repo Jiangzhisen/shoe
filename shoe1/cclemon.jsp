@@ -223,7 +223,7 @@
                 <h1 class="cc_tittle">陳品叡</h1>
                 
             <a href="https://www.instagram.com/r_a_y_5_5/" target=_blank> <img src="./asset/image/ig.png" class="icon"></a>
-            
+            <p></p>
             </div>
 
         </div>
@@ -238,7 +238,7 @@
             <h1 class="cc_tittle">翁浩翔</h1>
            
             <a href="https://instagram.com/boyceccc?igshid=YmMyMTA2M2Y=" target=_blank> <img src="./asset/image/ig.png" class="icon"></a>
-        
+            
         </div>
     </div>
     <div class="cc_photo_box">
@@ -265,9 +265,40 @@
         </div>
     </div>
 
+    <div class="cc_photo_box">
+        <div class="cc_detail">
+           
+            <p><br>在這個學期與另一外優秀的組員製作前端網站與後端進行整合，這個過程和上學期的我們心路歷程完全不同，像是傳值要用form表單等等的，真的需要在事前先提醒前端的學生，不然他們會超級痛苦，就是受過這樣的麻煩，所以期末的網站就可以將心比心的把這些東西注意到提前做好，這是一個相當好的前後端整合結果。<br><br><br><br></p>
+            
+        </div>
+    </div>
+
+    <div class="cc_photo_box">
+        <div class="cc_detail">
+           
+            <p><br>這次的多媒體期末專案讓我學習到許多有關網站的知識，像是網頁的輪播、排版等等，這些都是將來我在製作網頁時可以運用的機會。品叡好罩。<br><br><br><br><br><br><br><br><br><br><br><br></p>
+            
+        </div>
+    </div>
+
+    <div class="cc_photo_box">
+        <div class="cc_detail">
+           
+            <p><br>經過這學期的網程期末專案之後，相對於我在做前端的時候，我認為寫後端對我而言是很輕鬆無壓力的，因為基本上就那幾個觀念在重複使用，然後我覺得會寫得很輕鬆的原因是有了前端和資料庫的基礎，所以讓我僅花了4天的時間就把大部分的功能和頁面都寫完了，整體而言，這次的專案不只讓我感到很有成就感，也意外地引發了我對JSP開發的興趣。<br><br></p>
+            
+        </div>
+    </div>
+
+    <div class="cc_photo_box">
+        <div class="cc_detail">
+           
+            <p><br>在上學期經歷前端的作業後，這次負責後端的工程就相對清楚了。除了功能程式碼的編寫外，我們還需要考慮到客戶在使用過程中會出現的問題，相信這就是資管人的特別之處吧！資管要寫出來的是給「人」操作的程式，所以更要清楚了解並站在用戶的角度發想設計，做出更加「人性化」的程式。<br><br><br><br><br></p>
+            
+        </div>
+    </div>
 
 </div>
-
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <footer>
         <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>

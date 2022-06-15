@@ -224,21 +224,20 @@
                     ResultSet rs=con.createStatement().executeQuery(sql);
                     rs.next();
 
-                    int tolprice=Integer.parseInt(rs.getString(11));
-                    int totalprice=0;
-
-                    if(tolprice>=5000){
-                        totalprice=tolprice-200;
-                    }
-                    else{
-                        totalprice=tolprice;
-                    }
-
                     if(rs.getString(2) == null || rs.getString(2).equals("")){
                         con.close();
                         response.sendRedirect("model.jsp");
                     }
                     else{
+                        int tolprice=Integer.parseInt(rs.getString(11));
+                        int totalprice=0;
+
+                        if(tolprice>=5000){
+                            totalprice=tolprice-200;
+                        }
+                        else{
+                            totalprice=tolprice;
+                        }
                         out.println("<div class='paylist'>");
                         out.println("<div class='ppa'>結帳</div>");
                         out.println("<div class='list'>");
