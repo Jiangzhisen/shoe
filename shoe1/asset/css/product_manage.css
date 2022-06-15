@@ -1,0 +1,142 @@
+body {
+    background-color: rgb(206, 195, 195);
+}
+
+.LO {
+    margin: auto;
+    position: relative;
+    text-align: center;
+    top: 80px;
+}
+
+.LP h5 {
+    margin: 30px;
+    color: #000000;
+}
+.lp h3{
+    margin:20px;
+}
+.sp h3{
+    margin:20px;
+}
+.SP h5 {
+
+    margin: 17px;
+    color: #000000;
+
+}
+
+.LP h5:hover {
+    color: rgb(226, 163, 163);
+}
+.SP h5:hover {
+    color: rgb(226, 163, 163);
+}
+
+.LP h3,
+#uname,
+#pass,
+#name,
+#cpass,
+#uname2,
+#pass2 {
+    width: 400px;
+    height: 20px;
+    margin: 20px;
+    color: #000000;
+}
+.SP h3,
+#uname,
+#pass,
+#name,
+#cpass,
+#uname2,
+#pass2 {
+    
+    width: 400px;
+    height: 30px;
+    margin: 20px;
+    font-size: 25px;
+    padding: 10px;
+    color: #000000;
+}
+
+#cont1{
+    margin: 80px;
+    padding: 20px;
+    width: 580px;
+    height: auto;
+    background-color: white;
+    border-radius: 15px;
+    border-bottom: 10px solid #c3b4b0;
+    position: relative;
+    margin: auto;
+    top: 300px;
+    text-align: center;
+}
+#cont2 {
+    margin: 80px;
+    padding: 12px;
+    width: 600px;
+    height:auto;
+    background-color: white;
+    border-radius: 15px;
+    border-bottom: 10px solid #c3b4b0;
+    position: relative;
+    margin: auto;
+    top: 300px;
+    text-align: center;
+}
+
+#cont2 {
+    visibility: hidden;
+    
+}
+
+
+
+.submit {
+    color: white;
+    background: #d4a745;
+    width: 200px;
+    height: 40px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 15px;
+    border: 0px;
+    opacity: 0.8;
+    font-size: 22px;
+}
+
+.submit:hover {
+    background: #a18b5c;
+}
+
+
+
+input {
+    padding: 5px;
+    border: none;
+    border: solid 2px #d4a745;
+    border-radius: 5px;
+}
+.QAZ{
+    opacity: 1;
+    height: 600px;
+}
+.member_form_text2{
+    margin-left: 5%;
+}
+.ssayy {
+    margin-left:15%;
+    margin-top: 3%;
+	font-size:35px;
+	letter-spacing:4px;
+	line-height:30px;
+	width: 60%;
+    overflow:hidden;
+}
+.comm table td{
+    padding: 20px;
+    font-size: 23px;
+}
