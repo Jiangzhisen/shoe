@@ -226,8 +226,12 @@
                 con.close();
             }
             else{
-                sql="SELECT * FROM `product` WHERE `pname` LIKE '%"+s2ch+"%'";
+                sql="SELECT * FROM `product` WHERE `pname` LIKE '%"+s2ch+"%' AND `status`='上架中'";
                 ResultSet rs=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
+
+                sql="SELECT * FROM `product` WHERE `pname` LIKE '%"+s2ch+"%' AND `status`='上架中'";
+                ResultSet rs1=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
+
                 out.println("<div class='cls'>");
                 out.println("<div id='skater'>");
                 out.println("<div class='vertical-rotate-cell'>");
@@ -244,16 +248,24 @@
                 out.println("</div><br>");
                 out.println("</div>");
                 out.println("<br><br><br>");
-                while(rs.next()){
-                    out.println("<div class='shoe1'>");
-                    out.println("<form method='post' action='product.jsp'>");
-                    out.println("<input type='image' class='picture' src='"+rs.getString(3)+"'>");
-                    out.println("<p class='shoename'><div class=''>"+rs.getString(2)+"</div></p>");
-                    out.println("<input type='hidden' name='shoe' value='"+rs.getString(1)+"'>");
-                    out.println("</form>");
+                if(rs1.next()){
+                    while(rs.next()){
+                        out.println("<div class='shoe1'>");
+                        out.println("<form method='post' action='product.jsp'>");
+                        out.println("<input type='image' class='picture' src='"+rs.getString(3)+"'>");
+                        out.println("<p class='shoename'><div class=''>"+rs.getString(2)+"</div></p>");
+                        out.println("<input type='hidden' name='shoe' value='"+rs.getString(1)+"'>");
+                        out.println("</form>");
+                        out.println("</div>");
+                    }
                     out.println("</div>");
                 }
-                out.println("</div>");
+                else{
+                        out.println("<script language='javascript'>");
+                        out.println("alert('沒有這項商品 ! !');");
+                        out.println("window.location.href='index.jsp'");
+                        out.println("</script>");
+                }
 
                 con.close();
             }

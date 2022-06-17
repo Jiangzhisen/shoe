@@ -212,6 +212,11 @@
     
 </div>
 <!--     以上為登入畫面        -->
+
+        <%
+            if(acct.equals("admin")){
+
+        %>
 <section>
         <div class="comments">
             <div class="combox">
@@ -262,6 +267,16 @@
             沒有版權 愛怎麼抄就怎麼抄
         </p>
     </footer>
+            <%
+            }
+            else{
+                out.println("<script language='javascript'>");
+                out.println("alert('您不是管理員 ! !');");
+                out.println("window.location.href='index.jsp'");
+                out.println("</script>");
+            }
+
+        %>
     <script src="./asset/js/sign.js"></script>
 </body>
 </html>

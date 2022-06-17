@@ -211,6 +211,10 @@
     
 </div>
 <!--     以上為登入畫面        -->
+        <%
+            if(acct.equals("admin")){
+
+        %>
     
         <div class="QAZ" style="height:3400px;">
             <div class="lp">
@@ -355,6 +359,16 @@
         </div>
 
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <%
+            }
+            else{
+                out.println("<script language='javascript'>");
+                out.println("alert('您不是管理員 ! !');");
+                out.println("window.location.href='index.jsp'");
+                out.println("</script>");
+            }
+
+        %>
     
     <script src="./asset/js/sign.js"></script>
         <footer>
